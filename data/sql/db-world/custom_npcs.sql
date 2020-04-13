@@ -1,6 +1,6 @@
 -- Additional NPC locations
 DELETE FROM `creature` WHERE `id` IN (190010,601026,55003,601072,603251);
-INSERT INTO `creature` (`guid`, `id`, `map`, `zoneId`, `areaId`, `spawnMask`, `phaseMask`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `MovementType`, `npcflag`, `unit_flags`, `dynamicflags`, `ScriptName`, `VerifiedBuild`)
+INSERT INTO `creature` (`guid`, `id`, `map`, `zoneId`, `areaId`, `spawnMask`, `phaseMask`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `wander_distance`, `currentwaypoint`, `curhealth`, `curmana`, `MovementType`, `npcflag`, `unit_flags`, `dynamicflags`, `ScriptName`, `VerifiedBuild`)
 VALUES
 (5000000,190010,571,0,0,1,1,0,0,5838,453,658.834,3.7,300,0,0,12600,0,0,0,0,0,'',0),               -- Transmog       Dalaran
 (5000001,190010,1,0,0,1,1,0,0,1669.2,-4368.76,28.1428,3.52643,300,0,0,12600,0,0,0,0,0,'',0),      -- Transmog       Orgrimmar

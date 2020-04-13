@@ -64,7 +64,7 @@ VALUES
 (603255,0,3,0,62,0,100,0,53255,3,0,0,0,62,530,0,0,0,0,0,7,0,0,0,0,-4124.95,-12525.4,43.9797,2.37505,'Portal - On Gossip Select 3 - Teleport ''Azure Watch''');
 
 DELETE FROM `creature` WHERE `id` IN (603252,603253,603254,603255);
-INSERT INTO `creature` (`guid`, `id`, `map`, `zoneId`, `areaId`, `spawnMask`, `phaseMask`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `MovementType`, `npcflag`, `unit_flags`, `dynamicflags`, `ScriptName`, `VerifiedBuild`)
+INSERT INTO `creature` (`guid`, `id`, `map`, `zoneId`, `areaId`, `spawnMask`, `phaseMask`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `wander_distance`, `currentwaypoint`, `curhealth`, `curmana`, `MovementType`, `npcflag`, `unit_flags`, `dynamicflags`, `ScriptName`, `VerifiedBuild`)
 VALUES
 (5000100,603252,1,0,0,1,1,0,0,-591.472,-4206.15,38.6148,3.68034,300,0,0,10000,0,0,0,0,0,'',0),    -- Portal Valley of Trials
 (5000101,603252,1,0,0,1,1,0,0,-2926.27,-282.852,53.9151,0.522909,300,0,0,10000,0,0,0,0,0,'',0),   -- Portal Camp Narache
