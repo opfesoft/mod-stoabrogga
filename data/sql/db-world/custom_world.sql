@@ -24,3 +24,9 @@ UPDATE `creature_template` SET `DamageModifier` = 4, `HealthModifier` = 8 WHERE 
 
 -- Borelgore, Duskwing, Fulgorge: Set large
 UPDATE `creature_addon` SET `isLarge` = 1 WHERE `guid` IN (151913,151914,151933,53169,92847);
+
+-- Increase drop chance for "Shoveltusk Ligament" to 35% to make the quest "Parts for the Job" less cumbersome
+UPDATE `creature_loot_template` SET `Chance` = 35 WHERE `Item` = 33611;
+
+-- Set Party Loot for "Searing Tongue" and "Searing Heart" to make the quest "Identifying the Brood" less cumbersome for groups
+UPDATE `item_template` SET `flags` = `flags` | 2048 WHERE `entry` IN (5840,5841);
