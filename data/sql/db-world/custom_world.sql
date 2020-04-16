@@ -22,9 +22,6 @@ VALUES
 -- Fulgorge: More health / damage
 UPDATE `creature_template` SET `DamageModifier` = 4, `HealthModifier` = 8 WHERE `entry` = 18678;
 
--- Borelgore, Duskwing, Fulgorge: Set large
-UPDATE `creature_addon` SET `isLarge` = 1 WHERE `guid` IN (151913,151914,151933,53169,92847);
-
 -- Increase drop chance for "Shoveltusk Ligament" to 35% to make the quest "Parts for the Job" less cumbersome
 UPDATE `creature_loot_template` SET `Chance` = 35 WHERE `Item` = 33611;
 
