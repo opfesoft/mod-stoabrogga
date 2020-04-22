@@ -15,10 +15,6 @@ VALUES
 (702004,15,5,-1,'Hover Disk',58824,4,0,0,1,2000000,0,0,-1,-1,80,1,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,55884,0,-1,0,-1,330,3000,702004,6,0,0,-1,0,-1,0,0,0,0,-1,0,-1,0,0,0,0,-1,0,-1,0,0,0,0,-1,0,-1,1,'Teaches you how to summon this disk.  This is an extremely fast disk.',0,0,0,0,0,-1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,-1,0,0,0,0,'',0,0,0,0,0,1);
 
 
--- Black Qiraji Battle Tank: Use other models
-UPDATE `creature_template` set `modelid1` = 17699, `modelid2` = 17697, `modelid3` = 17719, `modelid4` = 17759 where `entry` = 32568;
-
-
 -- Custom creatures
 DELETE FROM `creature_template` WHERE `entry` IN (702000,702001,702002,702003,702004,702100,702101,702102);
 INSERT INTO `creature_template` (`entry`, `difficulty_entry_1`, `difficulty_entry_2`, `difficulty_entry_3`, `KillCredit1`, `KillCredit2`, `modelid1`, `modelid2`, `modelid3`, `modelid4`, `name`, `subname`, `IconName`, `gossip_menu_id`, `minlevel`, `maxlevel`, `exp`, `faction`, `npcflag`, `speed_walk`, `speed_run`, `scale`, `rank`, `dmgschool`, `DamageModifier`, `BaseAttackTime`, `RangeAttackTime`, `unit_class`, `unit_flags`, `unit_flags2`, `dynamicflags`, `family`, `trainer_type`, `trainer_spell`, `trainer_class`, `trainer_race`, `type`, `type_flags`, `lootid`, `pickpocketloot`, `skinloot`, `resistance1`, `resistance2`, `resistance3`, `resistance4`, `resistance5`, `resistance6`, `spell1`, `spell2`, `spell3`, `spell4`, `spell5`, `spell6`, `spell7`, `spell8`, `PetSpellDataId`, `VehicleId`, `mingold`, `maxgold`, `AIName`, `MovementType`, `InhabitType`, `HoverHeight`, `HealthModifier`, `ManaModifier`, `ArmorModifier`, `RacialLeader`, `movementId`, `RegenHealth`, `mechanic_immune_mask`, `flags_extra`, `ScriptName`, `VerifiedBuild`)
@@ -35,28 +31,24 @@ VALUES
 (702101,0,0,0,0,0,22120,0,0,0,'Frost Nymph','','',0,40,41,0,72,0,1,1.14286,1,0,0,1,2000,2000,1,0,2048,0,9,0,0,0,0,1,1,1557,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'',1,3,1,1.2,1,1,0,0,1,0,0,'',0),
 (702102,0,0,0,0,0,23747,0,0,0,'Arcane Wyrm','','',0,79,80,2,1711,0,1,0.99206,1,0,0,1,2000,2000,1,0,2048,0,42,0,0,0,0,1,65537,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'',0,3,1,1,1,1,0,0,1,0,0,'',0);
 
-DELETE FROM `creature_model_info` WHERE `DisplayID` IN (702000,702001,702002,702003);
+DELETE FROM `creature_model_info` WHERE `DisplayID` IN (702000,702001,702002,702003,702004);
 INSERT INTO `creature_model_info` (`DisplayID`, `BoundingRadius`, `CombatReach`, `Gender`, `DisplayID_Other_Gender`)
 VALUES
 (702000,0,0,2,0),
 (702001,0,0,2,0),
 (702002,0,0,2,0),
-(702003,0,0,2,0);
+(702003,0,0,2,0),
+(702004,0,0,2,0);
 
-DELETE FROM `creature_template_locale` WHERE `entry` IN (702000,702001,702002,702003);
+DELETE FROM `creature_template_locale` WHERE `entry` IN (702000,702001,702002,702003,702004);
 INSERT INTO `creature_template_locale` (`entry`, `locale`, `Name`, `Title`, `VerifiedBuild`)
 VALUES
 (702000,'deDE','Fledermaus','',1),
 (702001,'deDE','Nachtsauger','',1),
 (702002,'deDE','Vampirfledermaus','',1),
-(702003,'deDE','Albinofledermaus','',1);
-
-DELETE FROM `creature_model_info` WHERE `DisplayID` = 702004;
-INSERT INTO `creature_model_info` (`DisplayID`, `BoundingRadius`, `CombatReach`, `Gender`, `DisplayID_Other_Gender`)
-VALUES
-(702004,0,0,2,0);
-
-DELETE FROM `creature_template_locale` WHERE `entry` = 702004;
-INSERT INTO `creature_template_locale` (`entry`, `locale`, `Name`, `Title`, `VerifiedBuild`)
-VALUES
+(702003,'deDE','Albinofledermaus','',1),
 (702004,'deDE','Fliegende Scheibe','',1);
+
+
+-- Black Qiraji Battle Tank: Use other models
+UPDATE `creature_template` set `modelid1` = 17699, `modelid2` = 17697, `modelid3` = 17719, `modelid4` = 17759 where `entry` = 32568;
