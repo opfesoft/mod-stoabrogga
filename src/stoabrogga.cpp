@@ -6,7 +6,8 @@
 enum StoabroggaNpcs
 {
     NPC_BARBED_SPIDER = 702100,
-    NPC_ARCANE_WYRM   = 702102
+    NPC_ARCANE_WYRM   = 702102,
+    NPC_MANA_WYRM     = 702103
 };
 
 class Stoabrogga_PlayerScript : public PlayerScript
@@ -35,7 +36,8 @@ public:
                     pet->SetObjectScale(1.3f * pet->GetFloatValue(OBJECT_FIELD_SCALE_X));
                 break;
             case NPC_ARCANE_WYRM:
-                // Scale down custom "Arcane Wyrm" pet used by the Beastmaster module
+            case NPC_MANA_WYRM:
+                // Scale down custom "Arcane Wyrm" and "Mana Wyrm" pets used by the Beastmaster module
                 if (Pet* pet = guardian->ToPet())
                     pet->SetObjectScale(0.3f * pet->GetFloatValue(OBJECT_FIELD_SCALE_X));
                 break;
