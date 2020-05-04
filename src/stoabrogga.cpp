@@ -5,9 +5,11 @@
 
 enum StoabroggaNpcs
 {
-    NPC_BARBED_SPIDER = 702100,
-    NPC_ARCANE_WYRM   = 702102,
-    NPC_MANA_WYRM     = 702103
+    NPC_BARBED_SPIDER   = 702100,
+    NPC_ARCANE_WYRM     = 702102,
+    NPC_MANA_WYRM       = 702103,
+    NPC_RAZZASHI_RAPTOR = 702106,
+    NPC_RAVEN_LORD      = 702107
 };
 
 class Stoabrogga_PlayerScript : public PlayerScript
@@ -29,6 +31,12 @@ public:
                 // Scale down custom "Arcane Wyrm" and "Mana Wyrm" pets used by the Beastmaster module
                 if (Pet* pet = guardian->ToPet())
                     pet->SetObjectScale(0.3f * pet->GetFloatValue(OBJECT_FIELD_SCALE_X));
+                break;
+            case NPC_RAZZASHI_RAPTOR:
+            case NPC_RAVEN_LORD:
+                // Scale down custom "Razzashi Raptor" and "Raven Lord" pets used by the Beastmaster module
+                if (Pet* pet = guardian->ToPet())
+                    pet->SetObjectScale(0.6f * pet->GetFloatValue(OBJECT_FIELD_SCALE_X));
                 break;
         }
     }

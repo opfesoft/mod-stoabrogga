@@ -23,7 +23,7 @@ VALUES
 
 
 -- Custom creatures
-DELETE FROM `creature_template` WHERE `entry` IN (702000,702001,702002,702003,702004,702005,702006,702007,702008,702009,702100,702101,702102,702103);
+DELETE FROM `creature_template` WHERE `entry` IN (702000,702001,702002,702003,702004,702005,702006,702007,702008,702009,702100,702101,702102,702103,702104,702105,702106,702107);
 INSERT INTO `creature_template` (`entry`, `difficulty_entry_1`, `difficulty_entry_2`, `difficulty_entry_3`, `KillCredit1`, `KillCredit2`, `modelid1`, `modelid2`, `modelid3`, `modelid4`, `name`, `subname`, `IconName`, `gossip_menu_id`, `minlevel`, `maxlevel`, `exp`, `faction`, `npcflag`, `speed_walk`, `speed_run`, `scale`, `rank`, `dmgschool`, `DamageModifier`, `BaseAttackTime`, `RangeAttackTime`, `unit_class`, `unit_flags`, `unit_flags2`, `dynamicflags`, `family`, `trainer_type`, `trainer_spell`, `trainer_class`, `trainer_race`, `type`, `type_flags`, `lootid`, `pickpocketloot`, `skinloot`, `resistance1`, `resistance2`, `resistance3`, `resistance4`, `resistance5`, `resistance6`, `spell1`, `spell2`, `spell3`, `spell4`, `spell5`, `spell6`, `spell7`, `spell8`, `PetSpellDataId`, `VehicleId`, `mingold`, `maxgold`, `AIName`, `MovementType`, `InhabitType`, `HoverHeight`, `HealthModifier`, `ManaModifier`, `ArmorModifier`, `RacialLeader`, `movementId`, `RegenHealth`, `mechanic_immune_mask`, `flags_extra`, `ScriptName`, `VerifiedBuild`)
 VALUES
 -- Bat mounts
@@ -44,7 +44,11 @@ VALUES
 (702100,0,0,0,0,0,17814,0,0,0,'Barbed Spider (Black)','','',0,63,64,1,14,0,1,1.14286,1,0,0,1,2000,2000,2,0,2048,0,32,0,0,0,0,1,1,18464,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'',1,3,1,1,1,1,0,0,1,0,0,'',0),
 (702101,0,0,0,0,0,22120,0,0,0,'Frost Nymph','','',0,40,41,0,72,0,1,1.14286,1,0,0,1,2000,2000,1,0,2048,0,9,0,0,0,0,1,1,1557,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'',1,3,1,1.2,1,1,0,0,1,0,0,'',0),
 (702102,0,0,0,0,0,23747,0,0,0,'Arcane Wyrm','','',0,63,64,1,14,0,1,1.14286,1,0,0,1,2000,2000,2,0,2048,0,32,0,0,0,0,1,1,18464,0,70160,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'',1,3,1,1,1,1,0,0,1,0,0,'',0),
-(702103,0,0,0,0,0,23329,0,0,0,'Mana Wyrm','','',0,63,64,1,14,0,1,1.14286,1,0,0,1,2000,2000,2,0,2048,0,32,0,0,0,0,1,1,18464,0,70160,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'',1,3,1,1,1,1,0,0,1,0,0,'',0);
+(702103,0,0,0,0,0,23329,0,0,0,'Mana Wyrm','','',0,63,64,1,14,0,1,1.14286,1,0,0,1,2000,2000,2,0,2048,0,32,0,0,0,0,1,1,18464,0,70160,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'',1,3,1,1,1,1,0,0,1,0,0,'',0),
+(702104,0,0,0,0,0,22464,0,0,0,'Amani War Bear','','',0,21,22,0,14,0,1,1.14286,1,0,0,1,2000,2000,1,0,2048,0,4,0,0,0,0,1,1,2351,0,100005,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'',1,1,1,1.3,1,1,0,0,1,0,0,'',0),
+(702105,0,0,0,0,0,15290,0,0,0,'Zulian Tiger','','',0,21,22,0,14,0,1,1.14286,1,0,0,1,2000,2000,1,0,2048,0,4,0,0,0,0,1,1,2351,0,100005,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'',1,1,1,1.3,1,1,0,0,1,0,0,'',0),
+(702106,0,0,0,0,0,15289,0,0,0,'Razzashi Raptor','','',0,21,22,0,14,0,1,1.14286,1,0,0,1,2000,2000,1,0,2048,0,4,0,0,0,0,1,1,2351,0,100005,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'',1,1,1,1.3,1,1,0,0,1,0,0,'',0),
+(702107,0,0,0,0,0,21492,0,0,0,'Raven Lord','','',0,21,22,0,14,0,1,1.14286,1,0,0,1,2000,2000,1,0,2048,0,4,0,0,0,0,1,1,2351,0,100005,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'',1,1,1,1.3,1,1,0,0,1,0,0,'',0);
 
 DELETE FROM `creature_model_info` WHERE `DisplayID` IN (702000,702001,702002,702003,702004,702005,702006,702007,702008,702009);
 INSERT INTO `creature_model_info` (`DisplayID`, `BoundingRadius`, `CombatReach`, `Gender`, `DisplayID_Other_Gender`)
