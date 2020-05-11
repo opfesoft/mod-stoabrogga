@@ -1,5 +1,5 @@
 -- Additional NPC locations
-DELETE FROM `creature` WHERE `id` IN (190010,601026,55003,601072,603251);
+DELETE FROM `creature` WHERE `id` IN (190010,601026,55003,601072,603251,102010,702108);
 INSERT INTO `creature` (`guid`, `id`, `map`, `zoneId`, `areaId`, `spawnMask`, `phaseMask`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `wander_distance`, `currentwaypoint`, `curhealth`, `curmana`, `MovementType`, `npcflag`, `unit_flags`, `dynamicflags`, `VerifiedBuild`)
 VALUES
 (5000000,190010,571,0,0,1,1,0,0,5838,453,658.834,3.7,300,0,0,12600,0,0,0,0,0,0),               -- Transmog       Dalaran
@@ -31,4 +31,7 @@ VALUES
 (5000026,603251,571,0,0,1,1,0,0,5837.73,444.618,658.782,2.94375,300,0,0,10000,0,0,0,0,0,0),    -- Transformation Dalaran
 (5000027,603251,1,0,0,1,1,0,0,1673.61,-4368.81,29.2258,3.78008,300,0,0,10000,0,0,0,0,0,0),     -- Transformation Orgrimmar
 (5000028,603251,0,0,0,1,1,0,0,-8836.07,560.895,95.1554,5.87985,300,0,0,10000,0,0,0,0,0,0),     -- Transformation Stormwind
-(5000029,603251,1,0,0,1,1,0,0,9949.91,2498.01,1317.74,4.85919,300,0,0,10000,0,0,0,0,0,0);      -- Transformation Darnassus
+(5000029,603251,1,0,0,1,1,0,0,9949.91,2498.01,1317.74,4.85919,300,0,0,10000,0,0,0,0,0,0),      -- Transformation Darnassus
+(5000030,102010,1,0,0,1,1,0,1,1451.74,-4179.04,44.2775,5.97555,300,0,0,10000,0,0,0,0,0,0),     -- Loremaster Teito
+(5000031,702108,1,0,0,1,1,0,0,1453.58,-4182.23,44.2775,0.0654187,300,0,0,10000,0,0,0,0,0,0),   -- Spirit Wolf (Teito's Minion)
+(5000032,702108,1,0,0,1,1,0,0,1455.2,-4177.3,44.2773,5.78046,300,0,0,10000,0,0,0,0,0,0);       -- Spirit Wolf (Teito's Minion)

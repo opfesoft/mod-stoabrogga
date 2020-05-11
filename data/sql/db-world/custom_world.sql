@@ -2,6 +2,21 @@
 UPDATE `game_event` SET `start_time` = '2000-01-01 08:00:00', `end_time` = '2000-01-01 08:00:00' WHERE `eventEntry` IN
 (1,2,7,8,9,11,12,24,26,34,35,36,37,38,39,40,41,42,43,44,45,52,70);
 
+-- Use custom spell scripts for the mounts which did originally scale with the riding skill
+-- (this will cause errors in the server log because the old scripts are not assigned anymore)
+UPDATE `spell_script_names` SET `ScriptName` = 'spell_stoabrogga_big_blizzard_bear' WHERE `ScriptName` = 'spell_big_blizzard_bear';
+UPDATE `spell_script_names` SET `ScriptName` = 'spell_stoabrogga_magic_broom' WHERE `ScriptName` = 'spell_magic_broom';
+UPDATE `spell_script_names` SET `ScriptName` = 'spell_stoabrogga_headless_horseman_mount' WHERE `ScriptName` = 'spell_headless_horseman_mount';
+UPDATE `spell_script_names` SET `ScriptName` = 'spell_stoabrogga_winged_steed_of_the_ebon_blade' WHERE `ScriptName` = 'spell_winged_steed_of_the_ebon_blade';
+UPDATE `spell_script_names` SET `ScriptName` = 'spell_stoabrogga_big_love_rocket' WHERE `ScriptName` = 'spell_big_love_rocket';
+UPDATE `spell_script_names` SET `ScriptName` = 'spell_stoabrogga_invincible' WHERE `ScriptName` = 'spell_invincible';
+UPDATE `spell_script_names` SET `ScriptName` = 'spell_stoabrogga_blazing_hippogryph' WHERE `ScriptName` = 'spell_blazing_hippogryph';
+UPDATE `spell_script_names` SET `ScriptName` = 'spell_stoabrogga_celestial_steed' WHERE `ScriptName` = 'spell_celestial_steed';
+UPDATE `spell_script_names` SET `ScriptName` = 'spell_stoabrogga_x53_touring_rocket' WHERE `ScriptName` = 'spell_x53_touring_rocket';
+
+
+-- Relocate Ur'kyo
+UPDATE `creature` SET `position_x` = 1457.79, `position_y` = -4184.93, `position_z` = 44.3414, `orientation` = 1.11394 WHERE `guid` = 3472;
 
 -- Borelgore: Set active, elite and more health / damage
 UPDATE `creature_template` SET `rank` = 1, `DamageModifier` = 4, `HealthModifier` = 8 WHERE `entry` = 11896;
