@@ -25,7 +25,7 @@ VALUES
 -- Custom creatures
 DELETE FROM `creature_template` WHERE `entry` IN (
 702000,702001,702002,702003,702004,702005,702006,702007,702008,702009,102010,
-702100,702101,702102,702103,702104,702105,702106,702107,702108);
+702100,702101,702102,702103,702104,702105,702106,702107,702108,702109);
 INSERT INTO `creature_template` (`entry`, `difficulty_entry_1`, `difficulty_entry_2`, `difficulty_entry_3`, `KillCredit1`, `KillCredit2`, `modelid1`, `modelid2`, `modelid3`, `modelid4`, `name`, `subname`, `IconName`, `gossip_menu_id`, `minlevel`, `maxlevel`, `exp`, `faction`, `npcflag`, `speed_walk`, `speed_run`, `scale`, `rank`, `dmgschool`, `DamageModifier`, `BaseAttackTime`, `RangeAttackTime`, `unit_class`, `unit_flags`, `unit_flags2`, `dynamicflags`, `family`, `trainer_type`, `trainer_spell`, `trainer_class`, `trainer_race`, `type`, `type_flags`, `lootid`, `pickpocketloot`, `skinloot`, `resistance1`, `resistance2`, `resistance3`, `resistance4`, `resistance5`, `resistance6`, `spell1`, `spell2`, `spell3`, `spell4`, `spell5`, `spell6`, `spell7`, `spell8`, `PetSpellDataId`, `VehicleId`, `mingold`, `maxgold`, `AIName`, `MovementType`, `InhabitType`, `HoverHeight`, `HealthModifier`, `ManaModifier`, `ArmorModifier`, `RacialLeader`, `movementId`, `RegenHealth`, `mechanic_immune_mask`, `flags_extra`, `ScriptName`, `VerifiedBuild`)
 VALUES
 -- Creatures with custom model IDs
@@ -58,8 +58,21 @@ VALUES
 (702105,0,0,0,0,0,15290,0,0,0,'Zulian Tiger','','',0,21,22,0,14,0,1,1.14286,1,0,0,1,2000,2000,1,0,2048,0,4,0,0,0,0,1,1,2351,0,100005,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'',1,1,1,1.3,1,1,0,0,1,0,0,'',0),
 (702106,0,0,0,0,0,15289,0,0,0,'Razzashi Raptor','','',0,21,22,0,14,0,1,1.14286,1,0,0,1,2000,2000,1,0,2048,0,4,0,0,0,0,1,1,2351,0,100005,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'',1,1,1,1.3,1,1,0,0,1,0,0,'',0),
 (702107,0,0,0,0,0,21492,0,0,0,'Raven Lord','','',0,21,22,0,14,0,1,1.14286,1,0,0,1,2000,2000,1,0,2048,0,4,0,0,0,0,1,1,2351,0,100005,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'',1,1,1,1.3,1,1,0,0,1,0,0,'',0),
--- Teito's Minion
-(702108,0,0,0,0,0,21114,0,0,0,'Spirit Wolf','Teito''s Minion','',0,80,80,0,29,0,2,2.14286,1,0,0,1,2000,2000,1,512,2048,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'',0,3,1,1,1,1,0,0,1,0,2,'',0);
+-- Teito's Minion & Mount
+(702108,0,0,0,0,0,21114,0,0,0,'Spirit Wolf','Teito''s Minion','',0,80,80,0,29,0,2,2.14286,1,0,0,1,2000,2000,1,512,2048,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'',0,3,1,1,1,1,0,0,1,0,2,'',0),
+(702109,0,0,0,0,0,22464,0,0,0,'Amani War Bear','Teito''s Mount','',0,80,80,0,29,0,1,1.14286,1,0,0,1,2000,2000,1,512,2048,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'SmartAI',0,3,1,1,1,1,0,0,1,0,2,'',0);
+
+-- Amani War Bear SAI: Randomly execute emote "ONESHOT_ATTACKUNARMED"
+DELETE FROM `smart_scripts` WHERE `entryorguid` = 702109 AND `source_type` = 0;
+DELETE FROM `smart_scripts` WHERE `entryorguid` = 70210900 AND `source_type` = 9;
+INSERT INTO `smart_scripts` (`entryorguid`, `source_type`, `id`, `link`, `event_type`, `event_phase_mask`, `event_chance`, `event_flags`, `event_param1`, `event_param2`, `event_param3`, `event_param4`, `event_param5`, `action_type`, `action_param1`, `action_param2`, `action_param3`, `action_param4`, `action_param5`, `action_param6`, `target_type`, `target_param1`, `target_param2`, `target_param3`, `target_param4`, `target_x`, `target_y`, `target_z`, `target_o`, `comment`)
+VALUES
+(702109,0,0,0,1,0,100,0,20000,45000,20000,45000,0,80,70210900,0,0,0,0,0,1,0,0,0,0,0,0,0,0,'Amani War Bear - Out of Combat - Run Script'),
+(702109,0,1,0,4,0,100,0,0,0,0,0,0,103,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,'Amani War Bear - On Aggro - Set Root Off'),
+
+(70210900,9,0,0,0,0,100,0,0,0,0,0,0,103,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,'Amani War Bear - On Script - Set Root On'),
+(70210900,9,1,0,0,0,100,0,0,0,0,0,0,5,35,0,0,0,0,0,1,0,0,0,0,0,0,0,0,'Amani War Bear - On Script - Play Emote ''ONESHOT_ATTACKUNARMED'''),
+(70210900,9,2,0,0,0,100,0,2000,2000,0,0,0,103,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,'Amani War Bear - On Script - Set Root Off');
 
 -- Teito equip
 DELETE FROM `creature_equip_template` WHERE `CreatureID` = 102010;
