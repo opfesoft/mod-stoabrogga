@@ -33,13 +33,13 @@ public:
             case NPC_MANA_WYRM:
                 // Scale down custom "Arcane Wyrm" and "Mana Wyrm" pets used by the Beastmaster module
                 if (Pet* pet = guardian->ToPet())
-                    pet->SetObjectScale(0.3f * pet->GetFloatValue(OBJECT_FIELD_SCALE_X));
+                    pet->SetObjectScale(0.7f * pet->GetFloatValue(OBJECT_FIELD_SCALE_X));
                 break;
             case NPC_RAZZASHI_RAPTOR:
             case NPC_RAVEN_LORD:
                 // Scale down custom "Razzashi Raptor" and "Raven Lord" pets used by the Beastmaster module
                 if (Pet* pet = guardian->ToPet())
-                    pet->SetObjectScale(0.6f * pet->GetFloatValue(OBJECT_FIELD_SCALE_X));
+                    pet->SetObjectScale(0.7f * pet->GetFloatValue(OBJECT_FIELD_SCALE_X));
                 break;
         }
     }
