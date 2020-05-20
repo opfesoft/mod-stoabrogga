@@ -15,6 +15,9 @@ UPDATE `spell_script_names` SET `ScriptName` = 'spell_stoabrogga_celestial_steed
 UPDATE `spell_script_names` SET `ScriptName` = 'spell_stoabrogga_x53_touring_rocket' WHERE `ScriptName` = 'spell_x53_touring_rocket';
 
 
+-- Replace the mailboxes in Brill, The Sepulcher and Tarren Mill with the Undercity mailbox model
+UPDATE `gameobject` SET `id` = 177044 WHERE `guid` IN (44775,33370,17022);
+
 -- Relocate Ur'kyo
 UPDATE `creature` SET `position_x` = 1457.79, `position_y` = -4184.93, `position_z` = 44.3414, `orientation` = 1.11394 WHERE `guid` = 3472;
 
