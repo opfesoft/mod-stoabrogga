@@ -5,14 +5,59 @@
 #include "SpellScript.h"
 #include "Battlefield.h"
 #include "BattlefieldMgr.h"
+#include "../../mod-morphsummon/src/MorphSummon.h"
 
 enum StoabroggaNpcs
 {
-    NPC_BARBED_SPIDER   = 702100,
-    NPC_ARCANE_WYRM     = 702102,
-    NPC_MANA_WYRM       = 702103,
-    NPC_RAZZASHI_RAPTOR = 702106,
-    NPC_RAVEN_LORD      = 702107
+    NPC_BARBED_SPIDER             = 702100,
+    NPC_ARCANE_WYRM               = 702102,
+    NPC_MANA_WYRM                 = 702103,
+    NPC_RAZZASHI_RAPTOR           = 702106,
+    NPC_RAVEN_LORD                = 702107
+};
+
+enum StoabroggaDisplayIds
+{
+    DISPLAY_ID_WRATHGUARD_PINK    = 17542,
+    DISPLAY_ID_WRATHGUARD_BLACK_1 = 19597,
+    DISPLAY_ID_WRATHGUARD_BLACK_2 = 19915,
+    DISPLAY_ID_WRATHGUARD_GREEN_1 = 20040,
+    DISPLAY_ID_WRATHGUARD_GREEN_2 = 19914,
+    DISPLAY_ID_WRATHGUARD_RED_1   = 20041,
+    DISPLAY_ID_WRATHGUARD_RED_2   = 19599
+};
+
+enum StoabroggaSpellIds
+{
+    SUMMON_FELGUARD               = 30146
+};
+
+class Stoabrogga_MorphSummonModuleScript : public MorphSummonModuleScript
+{
+public:
+    Stoabrogga_MorphSummonModuleScript() : MorphSummonModuleScript("Stoabrogga_MorphSummonModuleScript") { }
+
+    void OnAfterPolymorph(Player* /*player*/, Pet* pet, uint32 spell, bool polymorphPet, uint32 morphId) override
+    {
+        if (polymorphPet && spell == SUMMON_FELGUARD)
+            switch (morphId)
+            {
+                case DISPLAY_ID_WRATHGUARD_PINK:
+                case DISPLAY_ID_WRATHGUARD_BLACK_1:
+                case DISPLAY_ID_WRATHGUARD_BLACK_2:
+                case DISPLAY_ID_WRATHGUARD_GREEN_1:
+                case DISPLAY_ID_WRATHGUARD_GREEN_2:
+                case DISPLAY_ID_WRATHGUARD_RED_1:
+                case DISPLAY_ID_WRATHGUARD_RED_2:
+                {
+                    // Scale down wrathguard used by the MorphSummon module
+                    pet->SetObjectScale(0.85f);
+                    break;
+                }
+                default:
+                    pet->SetObjectScale(1.0f);
+            }
+    }
 };
 
 class Stoabrogga_PlayerScript : public PlayerScript
@@ -40,6 +85,21 @@ public:
                 // Scale down custom "Razzashi Raptor" and "Raven Lord" pets used by the Beastmaster module
                 if (Pet* pet = guardian->ToPet())
                     pet->SetObjectScale(0.7f * pet->GetFloatValue(OBJECT_FIELD_SCALE_X));
+                break;
+        }
+
+        switch (guardian->GetDisplayId())
+        {
+            case DISPLAY_ID_WRATHGUARD_PINK:
+            case DISPLAY_ID_WRATHGUARD_BLACK_1:
+            case DISPLAY_ID_WRATHGUARD_BLACK_2:
+            case DISPLAY_ID_WRATHGUARD_GREEN_1:
+            case DISPLAY_ID_WRATHGUARD_GREEN_2:
+            case DISPLAY_ID_WRATHGUARD_RED_1:
+            case DISPLAY_ID_WRATHGUARD_RED_2:
+                // Scale down wrathguard used by the MorphSummon module
+                if (Pet* pet = guardian->ToPet())
+                    pet->SetObjectScale(0.85f);
                 break;
         }
     }
@@ -203,6 +263,7 @@ class spell_stoabrogga_gen_mount : public SpellScriptLoader
 
 void AddStoabroggaScripts()
 {
+    new Stoabrogga_MorphSummonModuleScript();
     new Stoabrogga_PlayerScript();
     new spell_stoabrogga_gen_mount("spell_stoabrogga_big_blizzard_bear", 0, SPELL_BIG_BLIZZARD_BEAR_60, SPELL_BIG_BLIZZARD_BEAR_100, SPELL_BIG_BLIZZARD_BEAR_150, SPELL_BIG_BLIZZARD_BEAR_280, SPELL_BIG_BLIZZARD_BEAR_310);
     new spell_stoabrogga_gen_mount("spell_stoabrogga_magic_broom", 0, SPELL_MAGIC_BROOM_60, SPELL_MAGIC_BROOM_100, SPELL_MAGIC_BROOM_150, SPELL_MAGIC_BROOM_280);
