@@ -45,3 +45,9 @@ UPDATE `creature_loot_template` SET `Chance` = 35 WHERE `Item` = 33611;
 
 -- Set Party Loot for "Searing Tongue" and "Searing Heart" to make the quest "Identifying the Brood" less cumbersome for groups
 UPDATE `item_template` SET `flags` = `flags` | 2048 WHERE `entry` IN (5840,5841);
+
+-- Increase drop chance for "Bloodshot Spider Eye" and "Thick Black Claw" to 50% to make the quest "Spirit Totem" less cumbersome
+UPDATE `creature_loot_template` SET `Chance` = 30 WHERE `Item` IN (20610,20611);
+
+-- Decrease respawn time for "Riven Widow Cocoon" to make the quest "Rivenwood Captives" less cumbersome
+UPDATE `creature` SET `spawntimesecs` = 150 WHERE `id` = 24210;
