@@ -51,3 +51,6 @@ UPDATE `creature_loot_template` SET `Chance` = 30 WHERE `Item` IN (20610,20611);
 
 -- Decrease respawn time for "Riven Widow Cocoon" to make the quest "Rivenwood Captives" less cumbersome
 UPDATE `creature` SET `spawntimesecs` = 150 WHERE `id` = 24210;
+
+-- Increase drop chance for "Scout Jyoba's Report" to 10% to make the quest "Jyoba's Report" less cumbersome
+UPDATE `creature_loot_template` SET `Chance` = 10 WHERE `Item` = 24373;
