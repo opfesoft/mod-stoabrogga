@@ -1,5 +1,5 @@
 -- Additional NPC locations
-DELETE FROM `creature` WHERE `id` IN (190010,601026,55003,601072,603251,102010,702108,702109,702010,702110,702111,702112);
+DELETE FROM `creature` WHERE `id` IN (190010,601026,55003,601072,603251,102010,702108,702109,702010,702110,702111,702112,702113,702114);
 INSERT INTO `creature` (`guid`, `id`, `map`, `zoneId`, `areaId`, `spawnMask`, `phaseMask`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `wander_distance`, `currentwaypoint`, `curhealth`, `curmana`, `MovementType`, `npcflag`, `unit_flags`, `dynamicflags`, `VerifiedBuild`)
 VALUES
 (5000000,190010,571,0,0,1,1,0,0,5838,453,658.834,3.7,300,0,0,12600,0,0,0,0,0,0),                 -- Transmog       Dalaran
@@ -45,7 +45,9 @@ VALUES
 (5000040,702010,571,0,0,1,1,0,0,2131.09,-3701.26,191.748,1.68596,600,0,0,10000,0,2,0,0,0,0),     -- Zarursha of the Shattered Sun; Spawn 4
 (5000041,702110,571,0,0,1,1,0,0,2126.95,-3702.59,191.278,1.60742,1209600,0,0,10000,0,0,0,0,0,0), -- Zerwosh (Zarursha's Pet); Spawn 4
 (5000042,702111,1,0,0,1,1,0,0,345.917,1812.03,60.8327,2.75038,600,0,0,10000,0,2,0,0,0,0),        -- Rexxar
-(5000043,702112,1,0,0,1,1,0,0,344.987,1806.03,60.1142,2.64042,1209600,0,0,10000,0,0,0,0,0,0);    -- Misha
+(5000043,702112,1,0,0,1,1,0,0,344.987,1806.03,60.1142,2.64042,1209600,0,0,10000,0,0,0,0,0,0),    -- Misha
+(5000044,702113,1,0,0,1,1,0,0,2152.99,-4671.53,50.2302,5.23569,300,0,0,10000,0,0,0,0,0,0),       -- Gronklaash (Zarursha's Pet)
+(5000045,702114,1,0,0,1,1,0,0,2068.02,-4693.87,84.3082,0.751035,300,0,0,10000,0,0,0,0,0,0);      -- Swift Red Wind Rider (Zarursha's Mount)
 
 DELETE FROM `creature_formations` WHERE `leaderGUID` IN (5000030,5000034,5000036,5000038,5000040,5000042);
 INSERT INTO `creature_formations` (`leaderGUID`, `memberGUID`, `dist`, `angle`, `groupAI`)
@@ -90,7 +92,7 @@ VALUES
 (5000038,702010,0,'Zarursha Spawn 3'),
 (5000040,702010,0,'Zarursha Spawn 4');
 
-DELETE FROM `creature_addon` WHERE `guid` IN (5000030,5000034,5000036,5000038,5000040,5000042,5000043);
+DELETE FROM `creature_addon` WHERE `guid` IN (5000030,5000034,5000036,5000038,5000040,5000042,5000043,5000045);
 INSERT INTO `creature_addon` (`guid`, `path_id`, `mount`, `bytes1`, `bytes2`, `emote`, `isLarge`, `auras`)
 VALUES
 (5000030,0,0,0,1,0,0,''),        -- Teito: Prepared melee weapon
@@ -99,7 +101,8 @@ VALUES
 (5000038,50000380,0,0,2,0,0,''), -- Zarursha Spawn 3: Waypoint path; ready ranged weapon
 (5000040,50000400,0,0,2,0,0,''), -- Zarursha Spawn 4: Waypoint path; ready ranged weapon
 (5000042,50000420,0,0,1,0,1,''), -- Rexxar: Path; ready melee weapon; set large
-(5000043,0,0,0,0,0,1,'');        -- Misha: Set large
+(5000043,0,0,0,0,0,1,''),        -- Misha: Set large
+(5000045,0,0,0,0,0,1,'');        -- Swift Red Wind Rider: Set large
 
 DELETE FROM `waypoint_scripts` WHERE `id` IN (500003400,500004200);
 INSERT INTO `waypoint_scripts` (`id`, `delay`, `command`, `datalong`, `datalong2`, `dataint`, `x`, `y`, `z`, `o`, `guid`)

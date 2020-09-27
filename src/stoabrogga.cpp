@@ -1,4 +1,7 @@
 #include "ScriptMgr.h"
+#include "ScriptedCreature.h"
+#include "SmartScriptMgr.h"
+#include "MoveSplineInit.h"
 #include "Player.h"
 #include "MapManager.h"
 #include "Pet.h"
@@ -261,6 +264,138 @@ class spell_stoabrogga_gen_mount : public SpellScriptLoader
         uint32 _mount310;
 };
 
+// Test cyclic spline movement on the ground
+class npc_gronklaash : public CreatureScript
+{
+public:
+    npc_gronklaash() : CreatureScript("npc_gronklaash") { }
+
+    CreatureAI* GetAI(Creature* creature) const override
+    {
+        return new npc_gronklaashAI(creature);
+    }
+
+    struct npc_gronklaashAI : public ScriptedAI
+    {
+        npc_gronklaashAI(Creature* creature) : ScriptedAI(creature)
+        {
+            pathPoints.clear();
+            WPPath* path = sSmartWaypointMgr->GetPath(me->GetEntry());
+            if (!path || path->empty())
+                return;
+
+            pathPoints.push_back(G3D::Vector3(me->GetPositionX(), me->GetPositionY(), me->GetPositionZ()));
+
+            uint32 wpCounter = 1;
+            WPPath::const_iterator itr;
+            while ((itr = path->find(wpCounter++)) != path->end())
+            {
+                WayPoint* wp = itr->second;
+                pathPoints.push_back(G3D::Vector3(wp->x, wp->y, wp->z));
+            }
+        }
+
+        void InitializeAI() override
+        {
+            JustReachedHome();
+        }
+
+        void JustRespawned() override
+        {
+            JustReachedHome();
+        }
+
+        void JustReachedHome() override
+        {
+            if (me->GetMotionMaster()->GetCurrentMovementGeneratorType() != EFFECT_MOTION_TYPE)
+            {
+                me->SetHover(true);
+                me->SetWalk(true);
+                Movement::MoveSplineInit init(me);
+                init.MovebyPath(pathPoints);
+                init.SetCyclic();
+                init.Launch();
+            }
+        }
+
+        void UpdateAI(uint32 /*diff*/) override
+        {
+            if (!UpdateVictim())
+                return;
+
+            DoMeleeAttackIfReady();
+        }
+
+        private:
+            Movement::PointsArray pathPoints;
+    };
+};
+
+// Test cyclic spline movement in the air
+class npc_swift_red_wind_rider : public CreatureScript
+{
+public:
+    npc_swift_red_wind_rider() : CreatureScript("npc_swift_red_wind_rider") { }
+
+    CreatureAI* GetAI(Creature* creature) const override
+    {
+        return new npc_swift_red_wind_riderAI(creature);
+    }
+
+    struct npc_swift_red_wind_riderAI : public ScriptedAI
+    {
+        npc_swift_red_wind_riderAI(Creature* creature) : ScriptedAI(creature)
+        {
+            pathPoints.clear();
+            WPPath* path = sSmartWaypointMgr->GetPath(me->GetEntry());
+            if (!path || path->empty())
+                return;
+
+            pathPoints.push_back(G3D::Vector3(me->GetPositionX(), me->GetPositionY(), me->GetPositionZ()));
+
+            uint32 wpCounter = 1;
+            WPPath::const_iterator itr;
+            while ((itr = path->find(wpCounter++)) != path->end())
+            {
+                WayPoint* wp = itr->second;
+                pathPoints.push_back(G3D::Vector3(wp->x, wp->y, wp->z));
+            }
+        }
+
+        void InitializeAI() override
+        {
+            JustReachedHome();
+        }
+
+        void JustRespawned() override
+        {
+            JustReachedHome();
+        }
+
+        void JustReachedHome() override
+        {
+            if (me->GetMotionMaster()->GetCurrentMovementGeneratorType() != EFFECT_MOTION_TYPE)
+            {
+                Movement::MoveSplineInit init(me);
+                init.MovebyPath(pathPoints);
+                init.SetCyclic();
+                init.Launch();
+            }
+        }
+
+        void UpdateAI(uint32 /*diff*/) override
+        {
+            if (!UpdateVictim())
+                return;
+
+            DoMeleeAttackIfReady();
+        }
+
+        private:
+            Movement::PointsArray pathPoints;
+    };
+};
+
 void AddStoabroggaScripts()
 {
     new Stoabrogga_MorphSummonModuleScript();
@@ -274,4 +409,6 @@ void AddStoabroggaScripts()
     new spell_stoabrogga_gen_mount("spell_stoabrogga_blazing_hippogryph", 0, 0, 0, SPELL_BLAZING_HIPPOGRYPH_150, SPELL_BLAZING_HIPPOGRYPH_280);
     new spell_stoabrogga_gen_mount("spell_stoabrogga_celestial_steed", 0, SPELL_CELESTIAL_STEED_60, SPELL_CELESTIAL_STEED_100, SPELL_CELESTIAL_STEED_150, SPELL_CELESTIAL_STEED_280, SPELL_CELESTIAL_STEED_310);
     new spell_stoabrogga_gen_mount("spell_stoabrogga_x53_touring_rocket", 0, 0, 0, SPELL_X53_TOURING_ROCKET_150, SPELL_X53_TOURING_ROCKET_280, SPELL_X53_TOURING_ROCKET_310);
+    new npc_gronklaash();
+    new npc_swift_red_wind_rider();
 }
