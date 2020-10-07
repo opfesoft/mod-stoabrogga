@@ -1,5 +1,8 @@
 -- Replace all Kor'kron Overseers in Undercity with Undercity Guardians
 
+-- Remove obsolete Kor'kron Overseer spawns
+DELETE FROM `creature` WHERE `guid` IN (79264,79265,79266,79267);
+
 -- Add SAI for Undercity Guardian
 UPDATE `creature_template` SET `AIName` = 'SmartAI' WHERE `entry` = 5624;
 DELETE FROM `smart_scripts` WHERE `entryorguid` = 5624 AND `source_type` = 0;
