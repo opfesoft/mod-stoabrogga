@@ -314,6 +314,7 @@ public:
                 Movement::MoveSplineInit init(me);
                 init.MovebyPath(pathPoints);
                 init.SetCyclic();
+                init.SetSmooth();
                 init.Launch();
             }
         }
