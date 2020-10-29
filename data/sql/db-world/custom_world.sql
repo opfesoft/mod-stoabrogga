@@ -2,6 +2,9 @@
 UPDATE `game_event` SET `start_time` = '2000-01-01 08:00:00', `end_time` = '2000-01-01 08:00:00' WHERE `eventEntry` IN
 (1,2,7,8,9,11,12,24,26,34,35,36,37,38,39,40,41,42,43,44,45,52,70);
 
+-- Play L70ETC event in Shattrath (World's End Tavern) every hour instead of every 3 hours
+UPDATE `game_event` SET `occurence` = 60 WHERE `eventEntry` IN (46,47);
+
 -- Use custom spell scripts for the mounts which did originally scale with the riding skill
 -- (this will cause errors in the server log because the old scripts are not assigned anymore)
 UPDATE `spell_script_names` SET `ScriptName` = 'spell_stoabrogga_big_blizzard_bear' WHERE `ScriptName` = 'spell_big_blizzard_bear';
