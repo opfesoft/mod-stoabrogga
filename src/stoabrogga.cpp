@@ -28,12 +28,12 @@ enum StoabroggaDisplayIds
     DISPLAY_ID_WRATHGUARD_GREEN_2 = 19914,
     DISPLAY_ID_WRATHGUARD_RED_1   = 20041,
     DISPLAY_ID_WRATHGUARD_RED_2   = 19599,
-    DISPLAY_ID_BEHOLDER_BLUE      = 19579,
-    DISPLAY_ID_BEHOLDER_RED       = 19877,
-    DISPLAY_ID_BEHOLDER_BEIGE     = 19878,
-    DISPLAY_ID_BEHOLDER_BLACK     = 20526,
-    DISPLAY_ID_BEHOLDER_GRAY      = 20527,
-    DISPLAY_ID_BEHOLDER_GREEN     = 20528
+    DISPLAY_ID_OBSERVER_BLUE      = 19579,
+    DISPLAY_ID_OBSERVER_RED       = 19877,
+    DISPLAY_ID_OBSERVER_BEIGE     = 19878,
+    DISPLAY_ID_OBSERVER_BLACK     = 20526,
+    DISPLAY_ID_OBSERVER_GRAY      = 20527,
+    DISPLAY_ID_OBSERVER_GREEN     = 20528
 };
 
 enum StoabroggaSpellIds
@@ -61,12 +61,12 @@ public:
                     // Scale down wrathguard used by the MorphSummon module
                     pet->SetObjectScale(0.85f);
                     break;
-                case DISPLAY_ID_BEHOLDER_BLUE:
-                case DISPLAY_ID_BEHOLDER_RED:
-                case DISPLAY_ID_BEHOLDER_BEIGE:
-                case DISPLAY_ID_BEHOLDER_BLACK:
-                case DISPLAY_ID_BEHOLDER_GRAY:
-                case DISPLAY_ID_BEHOLDER_GREEN:
+                case DISPLAY_ID_OBSERVER_BLUE:
+                case DISPLAY_ID_OBSERVER_RED:
+                case DISPLAY_ID_OBSERVER_BEIGE:
+                case DISPLAY_ID_OBSERVER_BLACK:
+                case DISPLAY_ID_OBSERVER_GRAY:
+                case DISPLAY_ID_OBSERVER_GREEN:
                     // Scale down beholder used by the MorphSummon module
                     pet->SetObjectScale(0.5f);
                     break;
@@ -117,12 +117,12 @@ public:
                 if (Pet* pet = guardian->ToPet())
                     pet->SetObjectScale(0.85f);
                 break;
-            case DISPLAY_ID_BEHOLDER_BLUE:
-            case DISPLAY_ID_BEHOLDER_RED:
-            case DISPLAY_ID_BEHOLDER_BEIGE:
-            case DISPLAY_ID_BEHOLDER_BLACK:
-            case DISPLAY_ID_BEHOLDER_GRAY:
-            case DISPLAY_ID_BEHOLDER_GREEN:
+            case DISPLAY_ID_OBSERVER_BLUE:
+            case DISPLAY_ID_OBSERVER_RED:
+            case DISPLAY_ID_OBSERVER_BEIGE:
+            case DISPLAY_ID_OBSERVER_BLACK:
+            case DISPLAY_ID_OBSERVER_GRAY:
+            case DISPLAY_ID_OBSERVER_GREEN:
                 // Scale down beholder used by the MorphSummon module
                 if (Pet* pet = guardian->ToPet())
                     pet->SetObjectScale(0.5f);
