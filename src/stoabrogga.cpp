@@ -67,7 +67,7 @@ public:
                 case DISPLAY_ID_OBSERVER_BLACK:
                 case DISPLAY_ID_OBSERVER_GRAY:
                 case DISPLAY_ID_OBSERVER_GREEN:
-                    // Scale down beholder used by the MorphSummon module
+                    // Scale down observer used by the MorphSummon module
                     pet->SetObjectScale(0.5f);
                     break;
                 default:
@@ -123,7 +123,7 @@ public:
             case DISPLAY_ID_OBSERVER_BLACK:
             case DISPLAY_ID_OBSERVER_GRAY:
             case DISPLAY_ID_OBSERVER_GREEN:
-                // Scale down beholder used by the MorphSummon module
+                // Scale down observer used by the MorphSummon module
                 if (Pet* pet = guardian->ToPet())
                     pet->SetObjectScale(0.5f);
                 break;
