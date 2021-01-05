@@ -18,6 +18,13 @@ UPDATE `spell_script_names` SET `ScriptName` = 'spell_stoabrogga_celestial_steed
 UPDATE `spell_script_names` SET `ScriptName` = 'spell_stoabrogga_x53_touring_rocket' WHERE `ScriptName` = 'spell_x53_touring_rocket';
 
 
+-- Troll Roof Stalker: Use "Uber Stealth" instead of "Stealth" to prevent the annoying sound in the auction house when they get visible
+DELETE FROM `smart_scripts` WHERE `entryorguid` = 23090 AND `source_type` = 0;
+INSERT INTO `smart_scripts` (`entryorguid`, `source_type`, `id`, `link`, `event_type`, `event_phase_mask`, `event_chance`, `event_flags`, `event_param1`, `event_param2`, `event_param3`, `event_param4`, `event_param5`, `action_type`, `action_param1`, `action_param2`, `action_param3`, `action_param4`, `action_param5`, `action_param6`, `target_type`, `target_param1`, `target_param2`, `target_param3`, `target_param4`, `target_x`, `target_y`, `target_z`, `target_o`, `comment`)
+VALUES
+(23090,0,0,1,25,0,100,0,0,0,0,0,0,75,18950,0,0,0,0,0,1,0,0,0,0,0,0,0,0,'Troll Roof Stalker - On Reset - Add Aura ''Invisibility and Stealth Detection'''),
+(23090,0,1,0,61,0,100,0,0,0,0,0,0,75,10032,0,0,0,0,0,1,0,0,0,0,0,0,0,0,'Troll Roof Stalker - Linked - Add Aura ''Uber Stealth''');
+
 -- Replace the mailboxes in Brill, The Sepulcher and Tarren Mill with the Undercity mailbox model
 UPDATE `gameobject` SET `id` = 177044 WHERE `guid` IN (44775,33370,17022);
 
