@@ -176,6 +176,9 @@ VALUES
 -- Black Qiraji Battle Tank: Use other models
 UPDATE `creature_template` set `modelid1` = 17699, `modelid2` = 17697, `modelid3` = 17719, `modelid4` = 17759 where `entry` = 32568;
 
+-- Ethereal Soul-Trader: Allow selling items
+UPDATE `creature_template` SET `flags_extra` = `flags_extra` & ~0x00001000 WHERE `entry` = 27914;
+
 
 -- Waypoints
 DELETE FROM `waypoints` WHERE `entry` IN (702113,702114);
