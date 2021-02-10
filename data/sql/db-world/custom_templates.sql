@@ -122,10 +122,10 @@ VALUES
 (702112,0,0,0,1,0,100,0,1000,1000,10000,10000,0,41,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,'Misha - OOC - Despawn');
 
 DELETE FROM `conditions` WHERE `SourceTypeOrReferenceId` = 22 AND `SourceEntry` IN (702110,702112);
-INSERT INTO `conditions` (`SourceTypeOrReferenceId`, `SourceGroup`, `SourceEntry`, `SourceId`, `ElseGroup`, `ConditionTypeOrReference`, `ConditionTarget`, `ConditionValue1`, `ConditionValue2`, `ConditionValue3`, `NegativeCondition`, `ErrorType`, `ErrorTextId`, `ScriptName`, `Comment`)
+INSERT INTO `conditions` (`SourceTypeOrReferenceId`, `SourceGroup`, `SourceEntry`, `SourceId`, `ElseGroup`, `ConditionTypeOrReference`, `ConditionTarget`, `ConditionValue1`, `ConditionValue2`, `ConditionValue3`, `NegativeCondition`, `ErrorType`, `ErrorTextId`, `Comment`)
 VALUES
-(22,1,702110,0,0,29,1,702010,40,0,1,0,0,'','Ensure that Zerwosh''s despawn SAI is only executed if Zarursha is not nearby (40 yards)'),
-(22,1,702112,0,0,29,1,702111,40,0,1,0,0,'','Ensure that Misha''s despawn SAI is only executed if Rexxar is not nearby (40 yards)');
+(22,1,702110,0,0,29,1,702010,40,0,1,0,0,'Ensure that Zerwosh''s despawn SAI is only executed if Zarursha is not nearby (40 yards)'),
+(22,1,702112,0,0,29,1,702111,40,0,1,0,0,'Ensure that Misha''s despawn SAI is only executed if Rexxar is not nearby (40 yards)');
 
 DELETE FROM `creature_equip_template` WHERE `CreatureID` IN (102010,702010,702111);
 INSERT INTO `creature_equip_template` (`CreatureID`, `ID`, `ItemID1`, `ItemID2`, `ItemID3`, `VerifiedBuild`)
