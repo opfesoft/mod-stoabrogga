@@ -64,7 +64,3 @@ UPDATE `creature` SET `spawntimesecs` = 150 WHERE `id` = 24210;
 
 -- Increase drop chance for "Scout Jyoba's Report" to 10% to make the quest "Jyoba's Report" less cumbersome
 UPDATE `creature_loot_template` SET `Chance` = 10 WHERE `Item` = 24373;
-
--- Abigail Shiel: Remove lantern (causes strange lighting effects)
-DELETE FROM `creature_equip_template` WHERE `CreatureID` = 2118;
-UPDATE `creature` SET `equipment_id` = 0 WHERE `guid` = 28471;
