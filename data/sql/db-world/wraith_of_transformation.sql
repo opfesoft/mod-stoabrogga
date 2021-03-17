@@ -15,23 +15,25 @@ VALUES
 (53251,5,4,'Human (Female)',0,1,1,0,0,0,0,'',0,0),           -- aura 62550
 (53251,6,4,'Orc (Male)',0,1,1,0,0,0,0,'',0,0),               -- aura 34317
 (53251,7,4,'Undead (Female)',0,1,1,0,0,0,0,'',0,0),          -- aura 29488
-(53251,8,4,'Worgen (Male)',0,1,1,0,0,0,0,'',0,0);            -- aura 31310
+(53251,8,4,'Worgen (Male)',0,1,1,0,0,0,0,'',0,0),            -- aura 31310
+(53251,9,4,'Druid Bear Form',0,1,1,0,0,0,0,'',0,0);          -- aura 20514
 
 DELETE FROM `smart_scripts` WHERE `entryorguid` = 603251 AND `source_type` = 0;
-DELETE FROM `smart_scripts` WHERE `entryorguid` BETWEEN 60325100 AND 60325108 AND `source_type` = 9;
+DELETE FROM `smart_scripts` WHERE `entryorguid` BETWEEN 60325100 AND 60325109 AND `source_type` = 9;
 INSERT INTO `smart_scripts` (`entryorguid`, `source_type`, `id`, `link`, `event_type`, `event_phase_mask`, `event_chance`, `event_flags`, `event_param1`, `event_param2`, `event_param3`, `event_param4`, `event_param5`, `action_type`, `action_param1`, `action_param2`, `action_param3`, `action_param4`, `action_param5`, `action_param6`, `target_type`, `target_param1`, `target_param2`, `target_param3`, `target_param4`, `target_x`, `target_y`, `target_z`, `target_o`, `comment`)
 VALUES
 (603251,0,0,0,54,0,100,0,0,0,0,0,0,41,60000,0,0,0,0,0,1,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Just Summoned - Despawn After 60 Seconds'),
-(603251,0,1,10,62,0,100,0,53251,0,0,0,0,80,60325100,2,0,0,0,0,1,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Gossip Select 0 - Call Action List'),
-(603251,0,2,10,62,0,100,0,53251,1,0,0,0,80,60325101,2,0,0,0,0,1,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Gossip Select 1 - Call Action List'),
-(603251,0,3,10,62,0,100,0,53251,2,0,0,0,80,60325102,2,0,0,0,0,1,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Gossip Select 2 - Call Action List'),
-(603251,0,4,10,62,0,100,0,53251,3,0,0,0,80,60325103,2,0,0,0,0,1,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Gossip Select 3 - Call Action List'),
-(603251,0,5,10,62,0,100,0,53251,4,0,0,0,80,60325104,2,0,0,0,0,1,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Gossip Select 4 - Call Action List'),
-(603251,0,6,10,62,0,100,0,53251,5,0,0,0,80,60325105,2,0,0,0,0,1,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Gossip Select 5 - Call Action List'),
-(603251,0,7,10,62,0,100,0,53251,6,0,0,0,80,60325106,2,0,0,0,0,1,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Gossip Select 6 - Call Action List'),
-(603251,0,8,10,62,0,100,0,53251,7,0,0,0,80,60325107,2,0,0,0,0,1,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Gossip Select 7 - Call Action List'),
-(603251,0,9,10,62,0,100,0,53251,8,0,0,0,80,60325108,2,0,0,0,0,1,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Gossip Select 8 - Call Action List'),
-(603251,0,10,0,61,0,100,0,0,0,0,0,0,72,0,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - Linked - Close Gossip'),
+(603251,0,1,0,61,0,100,0,0,0,0,0,0,72,0,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - Linked - Close Gossip'),
+(603251,0,2,1,62,0,100,0,53251,0,0,0,0,80,60325100,2,0,0,0,0,1,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Gossip Select 0 - Call Action List'),
+(603251,0,3,1,62,0,100,0,53251,1,0,0,0,80,60325101,2,0,0,0,0,1,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Gossip Select 1 - Call Action List'),
+(603251,0,4,1,62,0,100,0,53251,2,0,0,0,80,60325102,2,0,0,0,0,1,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Gossip Select 2 - Call Action List'),
+(603251,0,5,1,62,0,100,0,53251,3,0,0,0,80,60325103,2,0,0,0,0,1,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Gossip Select 3 - Call Action List'),
+(603251,0,6,1,62,0,100,0,53251,4,0,0,0,80,60325104,2,0,0,0,0,1,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Gossip Select 4 - Call Action List'),
+(603251,0,7,1,62,0,100,0,53251,5,0,0,0,80,60325105,2,0,0,0,0,1,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Gossip Select 5 - Call Action List'),
+(603251,0,8,1,62,0,100,0,53251,6,0,0,0,80,60325106,2,0,0,0,0,1,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Gossip Select 6 - Call Action List'),
+(603251,0,9,1,62,0,100,0,53251,7,0,0,0,80,60325107,2,0,0,0,0,1,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Gossip Select 7 - Call Action List'),
+(603251,0,10,1,62,0,100,0,53251,8,0,0,0,80,60325108,2,0,0,0,0,1,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Gossip Select 8 - Call Action List'),
+(603251,0,11,1,62,0,100,0,53251,9,0,0,0,80,60325109,2,0,0,0,0,1,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Gossip Select 9 - Call Action List'),
 
 (60325100,9,0,0,0,0,100,0,0,0,0,0,0,28,43909,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Script - Remove Aura ''Brewfest Reveler - Dwarf'''),
 (60325100,9,1,0,0,0,100,0,0,0,0,0,0,28,43911,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Script - Remove Aura ''Brewfest Reveler - Goblin'''),
@@ -41,6 +43,7 @@ VALUES
 (60325100,9,5,0,0,0,100,0,0,0,0,0,0,28,34317,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Script - Remove Aura ''Transform Malukaz'''),
 (60325100,9,6,0,0,0,100,0,0,0,0,0,0,28,29488,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Script - Remove Aura ''Night Mistress Transform'''),
 (60325100,9,7,0,0,0,100,0,0,0,0,0,0,28,31310,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Script - Remove Aura ''Landen Stilwell Transform'''),
+(60325100,9,8,0,0,0,100,0,0,0,0,0,0,28,20514,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Script - Remove Aura ''Ruul Snowhoof Shapechange (DND)'''),
 
 (60325101,9,0,0,0,0,100,0,0,0,0,0,0,28,43911,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Script - Remove Aura ''Brewfest Reveler - Goblin'''),
 (60325101,9,1,0,0,0,100,0,0,0,0,0,0,28,39158,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Script - Remove Aura ''Evergrove Druid Transform Druid'''),
@@ -49,7 +52,8 @@ VALUES
 (60325101,9,4,0,0,0,100,0,0,0,0,0,0,28,34317,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Script - Remove Aura ''Transform Malukaz'''),
 (60325101,9,5,0,0,0,100,0,0,0,0,0,0,28,29488,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Script - Remove Aura ''Night Mistress Transform'''),
 (60325101,9,6,0,0,0,100,0,0,0,0,0,0,28,31310,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Script - Remove Aura ''Landen Stilwell Transform'''),
-(60325101,9,7,0,0,0,100,0,0,0,0,0,0,75,43909,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Script - Add Aura ''Brewfest Reveler - Dwarf'''),
+(60325101,9,7,0,0,0,100,0,0,0,0,0,0,28,20514,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Script - Remove Aura ''Ruul Snowhoof Shapechange (DND)'''),
+(60325101,9,8,0,0,0,100,0,0,0,0,0,0,75,43909,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Script - Add Aura ''Brewfest Reveler - Dwarf'''),
 
 (60325102,9,0,0,0,0,100,0,0,0,0,0,0,28,43909,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Script - Remove Aura ''Brewfest Reveler - Dwarf'''),
 (60325102,9,1,0,0,0,100,0,0,0,0,0,0,28,39158,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Script - Remove Aura ''Evergrove Druid Transform Druid'''),
@@ -58,7 +62,8 @@ VALUES
 (60325102,9,4,0,0,0,100,0,0,0,0,0,0,28,34317,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Script - Remove Aura ''Transform Malukaz'''),
 (60325102,9,5,0,0,0,100,0,0,0,0,0,0,28,29488,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Script - Remove Aura ''Night Mistress Transform'''),
 (60325102,9,6,0,0,0,100,0,0,0,0,0,0,28,31310,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Script - Remove Aura ''Landen Stilwell Transform'''),
-(60325102,9,7,0,0,0,100,0,0,0,0,0,0,75,43911,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Script - Add Aura ''Brewfest Reveler - Goblin'''),
+(60325102,9,7,0,0,0,100,0,0,0,0,0,0,28,20514,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Script - Remove Aura ''Ruul Snowhoof Shapechange (DND)'''),
+(60325102,9,8,0,0,0,100,0,0,0,0,0,0,75,43911,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Script - Add Aura ''Brewfest Reveler - Goblin'''),
 
 (60325103,9,0,0,0,0,100,0,0,0,0,0,0,28,43909,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Script - Remove Aura ''Brewfest Reveler - Dwarf'''),
 (60325103,9,1,0,0,0,100,0,0,0,0,0,0,28,43911,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Script - Remove Aura ''Brewfest Reveler - Goblin'''),
@@ -67,7 +72,8 @@ VALUES
 (60325103,9,4,0,0,0,100,0,0,0,0,0,0,28,34317,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Script - Remove Aura ''Transform Malukaz'''),
 (60325103,9,5,0,0,0,100,0,0,0,0,0,0,28,29488,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Script - Remove Aura ''Night Mistress Transform'''),
 (60325103,9,6,0,0,0,100,0,0,0,0,0,0,28,31310,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Script - Remove Aura ''Landen Stilwell Transform'''),
-(60325103,9,7,0,0,0,100,0,0,0,0,0,0,75,39158,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Script - Add Aura ''Evergrove Druid Transform Druid'''),
+(60325103,9,7,0,0,0,100,0,0,0,0,0,0,28,20514,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Script - Remove Aura ''Ruul Snowhoof Shapechange (DND)'''),
+(60325103,9,8,0,0,0,100,0,0,0,0,0,0,75,39158,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Script - Add Aura ''Evergrove Druid Transform Druid'''),
 
 (60325104,9,0,0,0,0,100,0,0,0,0,0,0,28,43909,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Script - Remove Aura ''Brewfest Reveler - Dwarf'''),
 (60325104,9,1,0,0,0,100,0,0,0,0,0,0,28,43911,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Script - Remove Aura ''Brewfest Reveler - Goblin'''),
@@ -76,7 +82,8 @@ VALUES
 (60325104,9,4,0,0,0,100,0,0,0,0,0,0,28,34317,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Script - Remove Aura ''Transform Malukaz'''),
 (60325104,9,5,0,0,0,100,0,0,0,0,0,0,28,29488,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Script - Remove Aura ''Night Mistress Transform'''),
 (60325104,9,6,0,0,0,100,0,0,0,0,0,0,28,31310,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Script - Remove Aura ''Landen Stilwell Transform'''),
-(60325104,9,7,0,0,0,100,0,0,0,0,0,0,75,48498,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Script - Add Aura ''Transform - Valiance Keep Footman Spectator'''),
+(60325104,9,7,0,0,0,100,0,0,0,0,0,0,28,20514,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Script - Remove Aura ''Ruul Snowhoof Shapechange (DND)'''),
+(60325104,9,8,0,0,0,100,0,0,0,0,0,0,75,48498,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Script - Add Aura ''Transform - Valiance Keep Footman Spectator'''),
 
 (60325105,9,0,0,0,0,100,0,0,0,0,0,0,28,43909,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Script - Remove Aura ''Brewfest Reveler - Dwarf'''),
 (60325105,9,1,0,0,0,100,0,0,0,0,0,0,28,43911,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Script - Remove Aura ''Brewfest Reveler - Goblin'''),
@@ -85,7 +92,8 @@ VALUES
 (60325105,9,4,0,0,0,100,0,0,0,0,0,0,28,34317,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Script - Remove Aura ''Transform Malukaz'''),
 (60325105,9,5,0,0,0,100,0,0,0,0,0,0,28,29488,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Script - Remove Aura ''Night Mistress Transform'''),
 (60325105,9,6,0,0,0,100,0,0,0,0,0,0,28,31310,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Script - Remove Aura ''Landen Stilwell Transform'''),
-(60325105,9,7,0,0,0,100,0,0,0,0,0,0,75,62550,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Script - Add Aura ''Maiden of Ashwood Lake Transform'''),
+(60325105,9,7,0,0,0,100,0,0,0,0,0,0,28,20514,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Script - Remove Aura ''Ruul Snowhoof Shapechange (DND)'''),
+(60325105,9,8,0,0,0,100,0,0,0,0,0,0,75,62550,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Script - Add Aura ''Maiden of Ashwood Lake Transform'''),
 
 (60325106,9,0,0,0,0,100,0,0,0,0,0,0,28,43909,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Script - Remove Aura ''Brewfest Reveler - Dwarf'''),
 (60325106,9,1,0,0,0,100,0,0,0,0,0,0,28,43911,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Script - Remove Aura ''Brewfest Reveler - Goblin'''),
@@ -94,7 +102,8 @@ VALUES
 (60325106,9,4,0,0,0,100,0,0,0,0,0,0,28,62550,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Script - Remove Aura ''Maiden of Ashwood Lake Transform'''),
 (60325106,9,5,0,0,0,100,0,0,0,0,0,0,28,29488,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Script - Remove Aura ''Night Mistress Transform'''),
 (60325106,9,6,0,0,0,100,0,0,0,0,0,0,28,31310,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Script - Remove Aura ''Landen Stilwell Transform'''),
-(60325106,9,7,0,0,0,100,0,0,0,0,0,0,75,34317,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Script - Add Aura ''Transform Malukaz'''),
+(60325106,9,7,0,0,0,100,0,0,0,0,0,0,28,20514,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Script - Remove Aura ''Ruul Snowhoof Shapechange (DND)'''),
+(60325106,9,8,0,0,0,100,0,0,0,0,0,0,75,34317,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Script - Add Aura ''Transform Malukaz'''),
 
 (60325107,9,0,0,0,0,100,0,0,0,0,0,0,28,43909,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Script - Remove Aura ''Brewfest Reveler - Dwarf'''),
 (60325107,9,1,0,0,0,100,0,0,0,0,0,0,28,43911,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Script - Remove Aura ''Brewfest Reveler - Goblin'''),
@@ -103,7 +112,8 @@ VALUES
 (60325107,9,4,0,0,0,100,0,0,0,0,0,0,28,62550,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Script - Remove Aura ''Maiden of Ashwood Lake Transform'''),
 (60325107,9,5,0,0,0,100,0,0,0,0,0,0,28,34317,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Script - Remove Aura ''Transform Malukaz'''),
 (60325107,9,6,0,0,0,100,0,0,0,0,0,0,28,31310,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Script - Remove Aura ''Landen Stilwell Transform'''),
-(60325107,9,7,0,0,0,100,0,0,0,0,0,0,75,29488,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Script - Add Aura ''Night Mistress Transform'''),
+(60325107,9,7,0,0,0,100,0,0,0,0,0,0,28,20514,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Script - Remove Aura ''Ruul Snowhoof Shapechange (DND)'''),
+(60325107,9,8,0,0,0,100,0,0,0,0,0,0,75,29488,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Script - Add Aura ''Night Mistress Transform'''),
 
 (60325108,9,0,0,0,0,100,0,0,0,0,0,0,28,43909,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Script - Remove Aura ''Brewfest Reveler - Dwarf'''),
 (60325108,9,1,0,0,0,100,0,0,0,0,0,0,28,43911,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Script - Remove Aura ''Brewfest Reveler - Goblin'''),
@@ -112,4 +122,15 @@ VALUES
 (60325108,9,4,0,0,0,100,0,0,0,0,0,0,28,62550,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Script - Remove Aura ''Maiden of Ashwood Lake Transform'''),
 (60325108,9,5,0,0,0,100,0,0,0,0,0,0,28,34317,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Script - Remove Aura ''Transform Malukaz'''),
 (60325108,9,6,0,0,0,100,0,0,0,0,0,0,28,29488,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Script - Remove Aura ''Night Mistress Transform'''),
-(60325108,9,7,0,0,0,100,0,0,0,0,0,0,75,31310,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Script - Add Aura ''Landen Stilwell Transform''');
+(60325108,9,7,0,0,0,100,0,0,0,0,0,0,28,20514,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Script - Remove Aura ''Ruul Snowhoof Shapechange (DND)'''),
+(60325108,9,8,0,0,0,100,0,0,0,0,0,0,75,31310,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Script - Add Aura ''Landen Stilwell Transform'''),
+
+(60325109,9,0,0,0,0,100,0,0,0,0,0,0,28,43909,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Script - Remove Aura ''Brewfest Reveler - Dwarf'''),
+(60325109,9,1,0,0,0,100,0,0,0,0,0,0,28,43911,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Script - Remove Aura ''Brewfest Reveler - Goblin'''),
+(60325109,9,2,0,0,0,100,0,0,0,0,0,0,28,39158,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Script - Remove Aura ''Evergrove Druid Transform Druid'''),
+(60325109,9,3,0,0,0,100,0,0,0,0,0,0,28,48498,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Script - Remove Aura ''Transform - Valiance Keep Footman Spectator'''),
+(60325109,9,4,0,0,0,100,0,0,0,0,0,0,28,62550,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Script - Remove Aura ''Maiden of Ashwood Lake Transform'''),
+(60325109,9,5,0,0,0,100,0,0,0,0,0,0,28,34317,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Script - Remove Aura ''Transform Malukaz'''),
+(60325109,9,6,0,0,0,100,0,0,0,0,0,0,28,29488,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Script - Remove Aura ''Night Mistress Transform'''),
+(60325109,9,7,0,0,0,100,0,0,0,0,0,0,28,31310,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Script - Remove Aura ''Landen Stilwell Transform'''),
+(60325109,9,8,0,0,0,100,0,0,0,0,0,0,75,20514,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Script - Add Aura ''Ruul Snowhoof Shapechange (DND)''');
