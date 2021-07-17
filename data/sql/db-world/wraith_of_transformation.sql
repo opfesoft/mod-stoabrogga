@@ -19,7 +19,7 @@ VALUES
 (53251,9,4,'Druid Bear Form',0,1,1,0,0,0,0,'',0,0);          -- aura 20514
 
 DELETE FROM `smart_scripts` WHERE `entryorguid` = 603251 AND `source_type` = 0;
-DELETE FROM `smart_scripts` WHERE `entryorguid` BETWEEN 60325100 AND 60325109 AND `source_type` = 9;
+DELETE FROM `smart_scripts` WHERE `entryorguid` BETWEEN 60325100 AND 60325112 AND `source_type` = 9;
 INSERT INTO `smart_scripts` (`entryorguid`, `source_type`, `id`, `link`, `event_type`, `event_phase_mask`, `event_chance`, `event_flags`, `event_param1`, `event_param2`, `event_param3`, `event_param4`, `event_param5`, `action_type`, `action_param1`, `action_param2`, `action_param3`, `action_param4`, `action_param5`, `action_param6`, `target_type`, `target_param1`, `target_param2`, `target_param3`, `target_param4`, `target_x`, `target_y`, `target_z`, `target_o`, `comment`)
 VALUES
 (603251,0,0,0,54,0,100,0,0,0,0,0,0,41,60000,0,0,0,0,0,1,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Just Summoned - Despawn After 60 Seconds'),
@@ -34,6 +34,7 @@ VALUES
 (603251,0,9,1,62,0,100,0,53251,7,0,0,0,80,60325107,2,0,0,0,0,1,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Gossip Select 7 - Call Action List'),
 (603251,0,10,1,62,0,100,0,53251,8,0,0,0,80,60325108,2,0,0,0,0,1,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Gossip Select 8 - Call Action List'),
 (603251,0,11,1,62,0,100,0,53251,9,0,0,0,80,60325109,2,0,0,0,0,1,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Gossip Select 9 - Call Action List'),
+(603251,0,12,0,1,0,100,0,5000,15000,5000,15000,0,87,60325110,60325111,60325112,60325111,0,0,1,0,0,0,0,0,0,0,0,'Wraith of Transformation - OOC - Call Random Action List'),
 
 (60325100,9,0,0,0,0,100,0,0,0,0,0,0,28,43909,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Script - Remove Aura ''Brewfest Reveler - Dwarf'''),
 (60325100,9,1,0,0,0,100,0,0,0,0,0,0,28,43911,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Script - Remove Aura ''Brewfest Reveler - Goblin'''),
@@ -133,4 +134,10 @@ VALUES
 (60325109,9,5,0,0,0,100,0,0,0,0,0,0,28,34317,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Script - Remove Aura ''Transform Malukaz'''),
 (60325109,9,6,0,0,0,100,0,0,0,0,0,0,28,29488,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Script - Remove Aura ''Night Mistress Transform'''),
 (60325109,9,7,0,0,0,100,0,0,0,0,0,0,28,31310,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Script - Remove Aura ''Landen Stilwell Transform'''),
-(60325109,9,8,0,0,0,100,0,0,0,0,0,0,75,20514,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Script - Add Aura ''Ruul Snowhoof Shapechange (DND)''');
+(60325109,9,8,0,0,0,100,0,0,0,0,0,0,75,20514,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Script - Add Aura ''Ruul Snowhoof Shapechange (DND)'''),
+
+(60325110,9,0,0,0,0,100,0,0,0,0,0,0,5,1,0,0,0,0,0,10,5000047,55003,0,0,0,0,0,0,'Wraith of Transformation - On Script - Play Emote ''ONESHOT_TALK(DNR)'' (Eron Glowpride)'),
+
+(60325111,9,0,0,0,0,100,0,0,0,0,0,0,5,1,0,0,0,0,0,10,5000046,190010,0,0,0,0,0,0,'Wraith of Transformation - On Script - Play Emote ''ONESHOT_TALK(DNR)'' (Warpweaver)'),
+
+(60325112,9,0,0,0,0,100,0,0,0,0,0,0,5,6,0,0,0,0,0,10,5000047,55003,0,0,0,0,0,0,'Wraith of Transformation - On Script - Play Emote ''ONESHOT_QUESTION'' (Eron Glowpride)');

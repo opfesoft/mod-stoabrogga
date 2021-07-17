@@ -47,7 +47,17 @@ VALUES
 (5000042,702111,1,0,0,1,1,0,1,345.917,1812.03,60.8327,2.75038,600,0,10000,0,2,0,0,0,0),        -- Rexxar
 (5000043,702112,1,0,0,1,1,0,0,344.987,1806.03,60.1142,2.64042,1209600,0,10000,0,0,0,0,0,0),    -- Misha
 (5000044,702113,1,0,0,1,1,0,0,2152.99,-4671.53,50.2302,5.23569,300,0,10000,0,0,0,0,0,0),       -- Gronklaash (Zarursha's Pet)
-(5000045,702114,1,0,0,1,1,0,0,2068.02,-4693.87,84.3082,0.751035,300,0,10000,0,0,0,0,0,0);      -- Swift Red Wind Rider (Zarursha's Mount)
+(5000045,702114,1,0,0,1,1,0,0,2068.02,-4693.87,84.3082,0.751035,300,0,10000,0,0,0,0,0,0),      -- Swift Red Wind Rider (Zarursha's Mount)
+(5000046,190010,0,0,0,1,1,0,0,-4893.92,-967.62,501.443,1.13788,300,0,12600,0,0,0,0,0,0),       -- Transmog       Ironforge
+(5000047,55003,0,0,0,1,1,0,0,-4892.61,-964.79,502.605,4.27947,300,0,12600,0,0,0,0,0,0),        -- WeaponVisual   Ironforge
+(5000048,603251,0,0,0,1,1,0,0,-4887.66,-963.377,501.456,2.2021,300,0,10000,0,0,0,0,0,0),       -- Transformation Ironforge
+(5000049,601026,0,0,0,1,1,0,1,-4889.78,-955.823,501.464,0.99258,300,0,5342,0,0,0,0,0,0),       -- Beastmaster    Ironforge
+(5000050,601072,0,0,0,1,1,0,0,-4884.11,-953.307,501.465,2.7558,300,0,10000,0,0,0,0,0,0),       -- MorphSummon    Ironforge
+(5000051,603251,530,0,0,1,1,0,0,9721.22,-7502.11,13.5106,1.09615,300,0,10000,0,0,0,0,0,0),     -- Transformation Silvermoon
+(5000052,601026,530,0,0,1,1,0,1,9721.51,-7497.18,13.512,0.232216,300,0,5342,0,0,0,0,0,0),      -- Beastmaster    Silvermoon
+(5000053,190010,530,0,0,1,1,0,0,9725.12,-7501.64,13.5163,1.59095,300,0,12600,0,0,0,0,0,0),     -- Transmog       Silvermoon
+(5000054,55003,530,0,0,1,1,0,0,9728.32,-7501.73,13.5225,1.59095,300,0,12600,0,0,0,0,0,0),      -- WeaponVisual   Silvermoon
+(5000055,601072,530,0,0,1,1,0,0,9731.96,-7501.33,13.5281,1.59095,300,0,10000,0,0,0,0,0,0);     -- MorphSummon    Silvermoon
 
 DELETE FROM `creature_formations` WHERE `leaderGUID` IN (5000030,5000034,5000036,5000038,5000040,5000042);
 INSERT INTO `creature_formations` (`leaderGUID`, `memberGUID`, `dist`, `angle`, `groupAI`)
@@ -92,7 +102,7 @@ VALUES
 (5000038,702010,0,'Zarursha Spawn 3'),
 (5000040,702010,0,'Zarursha Spawn 4');
 
-DELETE FROM `creature_addon` WHERE `guid` IN (5000030,5000034,5000036,5000038,5000040,5000042,5000043,5000045);
+DELETE FROM `creature_addon` WHERE `guid` IN (5000030,5000034,5000036,5000038,5000040,5000042,5000043,5000045,5000047);
 INSERT INTO `creature_addon` (`guid`, `path_id`, `mount`, `bytes1`, `bytes2`, `emote`, `isLarge`, `auras`)
 VALUES
 (5000030,0,0,0,1,0,0,''),        -- Teito: Prepared melee weapon
@@ -102,7 +112,8 @@ VALUES
 (5000040,50000400,0,0,2,0,0,''), -- Zarursha Spawn 4: Waypoint path; ready ranged weapon
 (5000042,50000420,0,0,1,0,1,''), -- Rexxar: Path; ready melee weapon; set large
 (5000043,0,0,0,0,0,1,''),        -- Misha: Set large
-(5000045,0,0,0,0,0,1,'');        -- Swift Red Wind Rider: Set large
+(5000045,0,0,0,0,0,1,''),        -- Swift Red Wind Rider: Set large
+(5000047,0,0,1,0,0,0,'');        -- WeaponVisual: Sitting
 
 DELETE FROM `waypoint_scripts` WHERE `id` IN (500003400,500004200);
 INSERT INTO `waypoint_scripts` (`id`, `delay`, `command`, `datalong`, `datalong2`, `dataint`, `x`, `y`, `z`, `o`, `guid`)
