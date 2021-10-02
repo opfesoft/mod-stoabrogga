@@ -1,6 +1,50 @@
 -- Disable holiday events
 UPDATE `game_event` SET `start_time` = '2000-01-01 08:00:00', `end_time` = '2000-01-01 08:00:00' WHERE `eventEntry` IN
-(1,2,7,8,9,11,12,24,26,34,35,36,37,38,39,40,41,42,43,44,45,52,70);
+(1,2,6,7,8,9,11,12,24,26,33,34,35,36,37,38,39,40,41,42,43,44,45,50,51,52,70);
+UPDATE `game_event` SET `holiday` = 0, `holidayStage` = 0;
+
+-- Remove all holiday events from the client calendar
+DELETE FROM `holiday_dates`;
+INSERT INTO `holiday_dates` (`id`, `date_id`, `date_value`, `holiday_duration`)
+VALUES
+(62,0,512,0),
+(141,0,512,0),
+(181,0,512,0),
+(201,0,512,0),
+(283,0,512,0),
+(284,0,512,0),
+(285,0,512,0),
+(301,0,512,0),
+(321,0,512,0),
+(324,0,512,0),
+(327,0,512,0),
+(335,0,512,0),
+(341,0,512,0),
+(353,0,512,0),
+(372,0,512,0),
+(374,0,512,0),
+(375,0,512,0),
+(376,0,512,0),
+(398,0,512,0),
+(400,0,512,0),
+(404,0,512,0),
+(406,0,512,0),
+(409,0,512,0),
+(420,0,512,0),
+(423,0,512,0),
+(424,0,512,0);
+
+-- Custom date and occurence for Darkmoon Faire & Children's Week
+UPDATE `game_event` SET `start_time` = '2021-07-30 00:01:00', `occurence` = 60480, `length` = 2880 WHERE `eventEntry` = 77; -- Darkmoon Faire Building (Terokkar Forest)
+UPDATE `game_event` SET `start_time` = '2021-08-01 00:01:00', `occurence` = 60480, `length` = 10080 WHERE `eventEntry` = 3; -- Darkmoon Faire (Terokkar Forest)
+
+UPDATE `game_event` SET `start_time` = '2021-08-13 00:01:00', `occurence` = 60480, `length` = 2880 WHERE `eventEntry` = 23; -- Darkmoon Faire Building (Elwynn Forest)
+UPDATE `game_event` SET `start_time` = '2021-08-15 00:01:00', `occurence` = 60480, `length` = 10080 WHERE `eventEntry` = 4; -- Darkmoon Faire (Elwynn Forest)
+
+UPDATE `game_event` SET `start_time` = '2021-08-27 00:01:00', `occurence` = 60480, `length` = 2880 WHERE `eventEntry` = 71; -- Darkmoon Faire Building (Mulgore)
+UPDATE `game_event` SET `start_time` = '2021-08-29 00:01:00', `occurence` = 60480, `length` = 10080 WHERE `eventEntry` = 5; -- Darkmoon Faire (Mulgore)
+
+UPDATE `game_event` SET `start_time` = '2021-08-08 00:01:00', `occurence` = 60480 WHERE `eventEntry` = 10; -- Children's Week
 
 -- Play L70ETC event in Shattrath (World's End Tavern) every hour instead of every 3 hours
 UPDATE `game_event` SET `occurence` = 60 WHERE `eventEntry` IN (46,47);
