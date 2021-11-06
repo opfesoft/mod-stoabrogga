@@ -46,6 +46,9 @@ UPDATE `game_event` SET `start_time` = '2021-08-29 00:01:00', `occurence` = 6048
 
 UPDATE `game_event` SET `start_time` = '2021-08-08 00:01:00', `occurence` = 60480 WHERE `eventEntry` = 10; -- Children's Week
 
+-- Remove holiday restrictions from Orphan Whistles (those are checked by the client, the spells themselves are checked by the server via conditions)
+UPDATE `item_template` SET `HolidayId` = 0 WHERE `entry` IN (18597,18598,31880,31881,46396,46397);
+
 -- Play L70ETC event in Shattrath (World's End Tavern) every hour instead of every 3 hours
 UPDATE `game_event` SET `occurence` = 60 WHERE `eventEntry` IN (46,47);
 
