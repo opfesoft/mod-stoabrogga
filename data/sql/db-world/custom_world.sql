@@ -52,6 +52,13 @@ UPDATE `item_template` SET `HolidayId` = 0 WHERE `entry` IN (18597,18598,31880,3
 -- Play L70ETC event in Shattrath (World's End Tavern) every hour instead of every 3 hours
 UPDATE `game_event` SET `occurence` = 60 WHERE `eventEntry` IN (46,47);
 
+-- Disable Silithus Outdoor PvP
+UPDATE `gameobject_template_addon` SET `flags` = `flags` | 16 WHERE `entry` = 181598;
+DELETE FROM `disables` WHERE `sourceType` = 5 AND `entry` = 5;
+INSERT INTO `disables` (`sourceType`, `entry`, `flags`, `params_0`, `params_1`, `comment`)
+VALUES
+(5,5,0,'','','Disable Silithus Outdoor PvP');
+
 -- Use custom spell scripts for the mounts which did originally scale with the riding skill
 -- (this will cause errors in the server log because the old scripts are not assigned anymore)
 UPDATE `spell_script_names` SET `ScriptName` = 'spell_stoabrogga_big_blizzard_bear' WHERE `ScriptName` = 'spell_big_blizzard_bear';
