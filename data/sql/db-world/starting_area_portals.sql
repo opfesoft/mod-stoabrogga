@@ -43,25 +43,29 @@ DELETE FROM `smart_scripts` WHERE `entryorguid` BETWEEN 603252 AND 603255 AND `s
 INSERT INTO `smart_scripts` (`entryorguid`, `source_type`, `id`, `link`, `event_type`, `event_phase_mask`, `event_chance`, `event_flags`, `event_param1`, `event_param2`, `event_param3`, `event_param4`, `event_param5`, `action_type`, `action_param1`, `action_param2`, `action_param3`, `action_param4`, `action_param5`, `action_param6`, `target_type`, `target_param1`, `target_param2`, `target_param3`, `target_param4`, `target_x`, `target_y`, `target_z`, `target_o`, `comment`)
 VALUES
 -- Horde starting area hub 1
-(603252,0,0,0,62,0,100,0,53252,0,0,0,0,62,1,0,0,0,0,0,7,0,0,0,0,-591.472,-4206.15,38.6148,3.68034,'Portal - On Gossip Select 0 - Teleport ''Valley of Trials'''),
-(603252,0,1,0,62,0,100,0,53252,1,0,0,0,62,1,0,0,0,0,0,7,0,0,0,0,-2926.27,-282.852,53.9151,0.522909,'Portal - On Gossip Select 1 - Teleport ''Camp Narache'''),
-(603252,0,2,0,62,0,100,0,53252,2,0,0,0,62,0,0,0,0,0,0,7,0,0,0,0,1861.25,1612.04,95.6047,4.8979,'Portal - On Gossip Select 2 - Teleport ''Deathknell'''),
-(603252,0,3,0,62,0,100,0,53252,3,0,0,0,62,530,0,0,0,0,0,7,0,0,0,0,10400.2,-6313.17,35.6769,4.14505,'Portal - On Gossip Select 3 - Teleport ''Sunstrider Isle'''),
+(603252,0,0,4,62,0,100,0,53252,0,0,0,0,62,1,0,0,0,0,0,7,0,0,0,0,-591.472,-4206.15,38.6148,3.68034,'Portal - On Gossip Select 0 - Teleport ''Valley of Trials'''),
+(603252,0,1,4,62,0,100,0,53252,1,0,0,0,62,1,0,0,0,0,0,7,0,0,0,0,-2926.27,-282.852,53.9151,0.522909,'Portal - On Gossip Select 1 - Teleport ''Camp Narache'''),
+(603252,0,2,4,62,0,100,0,53252,2,0,0,0,62,0,0,0,0,0,0,7,0,0,0,0,1861.25,1612.04,95.6047,4.8979,'Portal - On Gossip Select 2 - Teleport ''Deathknell'''),
+(603252,0,3,4,62,0,100,0,53252,3,0,0,0,62,530,0,0,0,0,0,7,0,0,0,0,10400.2,-6313.17,35.6769,4.14505,'Portal - On Gossip Select 3 - Teleport ''Sunstrider Isle'''),
+(603252,0,4,0,61,0,100,0,0,0,0,0,0,72,0,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Portal - Linked - Close Gossip'),
 -- Horde starting area hub 2
-(603253,0,0,0,62,0,100,0,53253,0,0,0,0,62,1,0,0,0,0,0,7,0,0,0,0,265.288,-4769.25,11.9933,1.06182,'Portal - On Gossip Select 0 - Teleport ''Razor Hill'''),
-(603253,0,1,0,62,0,100,0,53253,1,0,0,0,62,1,0,0,0,0,0,7,0,0,0,0,-2343.81,-428.649,-6.95221,1.54156,'Portal - On Gossip Select 1 - Teleport ''Bloodhoof Village'''),
-(603253,0,2,0,62,0,100,0,53253,2,0,0,0,62,0,0,0,0,0,0,7,0,0,0,0,2281.76,264.29,35.0406,2.66737,'Portal - On Gossip Select 2 - Teleport ''Brill'''),
-(603253,0,3,0,62,0,100,0,53253,3,0,0,0,62,530,0,0,0,0,0,7,0,0,0,0,9494.23,-6746.76,17.1456,5.04197,'Portal - On Gossip Select 3 - Teleport ''Falconwing Square'''),
+(603253,0,0,4,62,0,100,0,53253,0,0,0,0,62,1,0,0,0,0,0,7,0,0,0,0,265.288,-4769.25,11.9933,1.06182,'Portal - On Gossip Select 0 - Teleport ''Razor Hill'''),
+(603253,0,1,4,62,0,100,0,53253,1,0,0,0,62,1,0,0,0,0,0,7,0,0,0,0,-2343.81,-428.649,-6.95221,1.54156,'Portal - On Gossip Select 1 - Teleport ''Bloodhoof Village'''),
+(603253,0,2,4,62,0,100,0,53253,2,0,0,0,62,0,0,0,0,0,0,7,0,0,0,0,2281.76,264.29,35.0406,2.66737,'Portal - On Gossip Select 2 - Teleport ''Brill'''),
+(603253,0,3,4,62,0,100,0,53253,3,0,0,0,62,530,0,0,0,0,0,7,0,0,0,0,9494.23,-6746.76,17.1456,5.04197,'Portal - On Gossip Select 3 - Teleport ''Falconwing Square'''),
+(603253,0,4,0,61,0,100,0,0,0,0,0,0,72,0,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Portal - Linked - Close Gossip'),
 -- Alliance starting area hub 1
-(603254,0,0,0,62,0,100,0,53254,0,0,0,0,62,0,0,0,0,0,0,7,0,0,0,0,-8887.31,-128.403,81.5698,2.93852,'Portal - On Gossip Select 0 - Teleport ''Northshire Valley'''),
-(603254,0,1,0,62,0,100,0,53254,1,0,0,0,62,0,0,0,0,0,0,7,0,0,0,0,-6173.08,405.924,398.588,4.30114,'Portal - On Gossip Select 1 - Teleport ''Coldridge Valley'''),
-(603254,0,2,0,62,0,100,0,53254,2,0,0,0,62,1,0,0,0,0,0,7,0,0,0,0,10377.4,721.263,1325.4,1.08142,'Portal - On Gossip Select 2 - Teleport ''Aldrassil'''),
-(603254,0,3,0,62,0,100,0,53254,3,0,0,0,62,530,0,0,0,0,0,7,0,0,0,0,-4041.81,-13794.9,75.8193,1.30377,'Portal - On Gossip Select 3 - Teleport ''Ammen Vale'''),
+(603254,0,0,4,62,0,100,0,53254,0,0,0,0,62,0,0,0,0,0,0,7,0,0,0,0,-8887.31,-128.403,81.5698,2.93852,'Portal - On Gossip Select 0 - Teleport ''Northshire Valley'''),
+(603254,0,1,4,62,0,100,0,53254,1,0,0,0,62,0,0,0,0,0,0,7,0,0,0,0,-6173.08,405.924,398.588,4.30114,'Portal - On Gossip Select 1 - Teleport ''Coldridge Valley'''),
+(603254,0,2,4,62,0,100,0,53254,2,0,0,0,62,1,0,0,0,0,0,7,0,0,0,0,10377.4,721.263,1325.4,1.08142,'Portal - On Gossip Select 2 - Teleport ''Aldrassil'''),
+(603254,0,3,4,62,0,100,0,53254,3,0,0,0,62,530,0,0,0,0,0,7,0,0,0,0,-4041.81,-13794.9,75.8193,1.30377,'Portal - On Gossip Select 3 - Teleport ''Ammen Vale'''),
+(603254,0,4,0,61,0,100,0,0,0,0,0,0,72,0,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Portal - Linked - Close Gossip'),
 -- Alliance starting area hub 2
-(603255,0,0,0,62,0,100,0,53255,0,0,0,0,62,0,0,0,0,0,0,7,0,0,0,0,-9439.43,24.7988,57.6432,0.682073,'Portal - On Gossip Select 0 - Teleport ''Goldshire'''),
-(603255,0,1,0,62,0,100,0,53255,1,0,0,0,62,0,0,0,0,0,0,7,0,0,0,0,-5620.27,-510.245,404.181,0.807681,'Portal - On Gossip Select 1 - Teleport ''Kharanos'''),
-(603255,0,2,0,62,0,100,0,53255,2,0,0,0,62,1,0,0,0,0,0,7,0,0,0,0,9855.61,931.262,1308.33,5.81661,'Portal - On Gossip Select 2 - Teleport ''Dolanaar'''),
-(603255,0,3,0,62,0,100,0,53255,3,0,0,0,62,530,0,0,0,0,0,7,0,0,0,0,-4124.95,-12525.4,43.9797,2.37505,'Portal - On Gossip Select 3 - Teleport ''Azure Watch''');
+(603255,0,0,4,62,0,100,0,53255,0,0,0,0,62,0,0,0,0,0,0,7,0,0,0,0,-9439.43,24.7988,57.6432,0.682073,'Portal - On Gossip Select 0 - Teleport ''Goldshire'''),
+(603255,0,1,4,62,0,100,0,53255,1,0,0,0,62,0,0,0,0,0,0,7,0,0,0,0,-5620.27,-510.245,404.181,0.807681,'Portal - On Gossip Select 1 - Teleport ''Kharanos'''),
+(603255,0,2,4,62,0,100,0,53255,2,0,0,0,62,1,0,0,0,0,0,7,0,0,0,0,9855.61,931.262,1308.33,5.81661,'Portal - On Gossip Select 2 - Teleport ''Dolanaar'''),
+(603255,0,3,4,62,0,100,0,53255,3,0,0,0,62,530,0,0,0,0,0,7,0,0,0,0,-4124.95,-12525.4,43.9797,2.37505,'Portal - On Gossip Select 3 - Teleport ''Azure Watch'''),
+(603255,0,4,0,61,0,100,0,0,0,0,0,0,72,0,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Portal - Linked - Close Gossip');
 
 DELETE FROM `creature` WHERE `id` IN (603252,603253,603254,603255);
 INSERT INTO `creature` (`guid`, `id`, `map`, `zoneId`, `areaId`, `spawnMask`, `phaseMask`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `wander_distance`, `curhealth`, `curmana`, `MovementType`, `npcflag`, `unit_flags`, `dynamicflags`, `VerifiedBuild`)
