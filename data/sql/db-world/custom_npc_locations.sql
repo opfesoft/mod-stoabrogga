@@ -105,15 +105,15 @@ VALUES
 DELETE FROM `creature_addon` WHERE `guid` IN (5000030,5000034,5000036,5000038,5000040,5000042,5000043,5000045,5000047);
 INSERT INTO `creature_addon` (`guid`, `path_id`, `mount`, `bytes1`, `bytes2`, `emote`, `isLarge`, `auras`)
 VALUES
-(5000030,0,0,0,1,0,0,''),        -- Teito: Prepared melee weapon
-(5000034,50000340,0,0,2,0,0,''), -- Zarursha Spawn 1: Waypoint path; ready ranged weapon
-(5000036,50000360,0,0,2,0,0,''), -- Zarursha Spawn 2: Waypoint path; ready ranged weapon
-(5000038,50000380,0,0,2,0,0,''), -- Zarursha Spawn 3: Waypoint path; ready ranged weapon
-(5000040,50000400,0,0,2,0,0,''), -- Zarursha Spawn 4: Waypoint path; ready ranged weapon
-(5000042,50000420,0,0,1,0,1,''), -- Rexxar: Path; ready melee weapon; set large
-(5000043,0,0,0,0,0,1,''),        -- Misha: Set large
-(5000045,0,0,0,0,0,1,''),        -- Swift Red Wind Rider: Set large
-(5000047,0,0,1,0,0,0,'');        -- WeaponVisual: Sitting
+(5000030,0,0,0,1,0,0,NULL),        -- Teito: Prepared melee weapon
+(5000034,50000340,0,0,2,0,0,NULL), -- Zarursha Spawn 1: Waypoint path; ready ranged weapon
+(5000036,50000360,0,0,2,0,0,NULL), -- Zarursha Spawn 2: Waypoint path; ready ranged weapon
+(5000038,50000380,0,0,2,0,0,NULL), -- Zarursha Spawn 3: Waypoint path; ready ranged weapon
+(5000040,50000400,0,0,2,0,0,NULL), -- Zarursha Spawn 4: Waypoint path; ready ranged weapon
+(5000042,50000420,0,0,1,0,1,NULL), -- Rexxar: Path; ready melee weapon; set large
+(5000043,0,0,0,0,0,1,NULL),        -- Misha: Set large
+(5000045,0,0,0,0,0,1,NULL),        -- Swift Red Wind Rider: Set large
+(5000047,0,0,1,0,0,0,NULL);        -- WeaponVisual: Sitting
 
 DELETE FROM `waypoint_scripts` WHERE `id` IN (500003400,500004200);
 INSERT INTO `waypoint_scripts` (`id`, `delay`, `command`, `datalong`, `datalong2`, `dataint`, `x`, `y`, `z`, `o`, `guid`)
