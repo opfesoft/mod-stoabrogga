@@ -16,7 +16,8 @@ VALUES
 (53251,6,4,'Orc (Male)',0,1,1,0,0,0,0,'',0,0),               -- aura 34317
 (53251,7,4,'Undead (Female)',0,1,1,0,0,0,0,'',0,0),          -- aura 29488
 (53251,8,4,'Worgen (Male)',0,1,1,0,0,0,0,'',0,0),            -- aura 31310
-(53251,9,4,'Druid Bear Form',0,1,1,0,0,0,0,'',0,0);          -- aura 20514
+(53251,9,4,'Druid Bear Form',0,1,1,0,0,0,0,'',0,0),          -- aura 20514
+(53251,10,0,'Play Undead Dance Music',0,1,1,0,0,0,0,'',0,0);
 
 DELETE FROM `smart_scripts` WHERE `entryorguid` = 603251 AND `source_type` = 0;
 DELETE FROM `smart_scripts` WHERE `entryorguid` BETWEEN 60325100 AND 60325112 AND `source_type` = 9;
@@ -34,7 +35,8 @@ VALUES
 (603251,0,9,1,62,0,100,0,53251,7,0,0,0,80,60325107,2,0,0,0,0,1,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Gossip Select 7 - Call Action List'),
 (603251,0,10,1,62,0,100,0,53251,8,0,0,0,80,60325108,2,0,0,0,0,1,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Gossip Select 8 - Call Action List'),
 (603251,0,11,1,62,0,100,0,53251,9,0,0,0,80,60325109,2,0,0,0,0,1,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Gossip Select 9 - Call Action List'),
-(603251,0,12,0,1,0,100,0,5000,15000,5000,15000,0,87,60325110,60325111,60325112,60325111,0,0,1,0,0,0,0,0,0,0,0,'Wraith of Transformation - OOC - Call Random Action List'),
+(603251,0,12,1,62,0,100,0,53251,10,0,0,0,216,5355,1,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Gossip Select 10 - Play Music'),
+(603251,0,13,0,1,0,100,0,5000,15000,5000,15000,0,87,60325110,60325111,60325112,60325111,0,0,1,0,0,0,0,0,0,0,0,'Wraith of Transformation - OOC - Call Random Action List'),
 
 (60325100,9,0,0,0,0,100,0,0,0,0,0,0,28,43909,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Script - Remove Aura ''Brewfest Reveler - Dwarf'''),
 (60325100,9,1,0,0,0,100,0,0,0,0,0,0,28,43911,0,0,0,0,0,7,0,0,0,0,0,0,0,0,'Wraith of Transformation - On Script - Remove Aura ''Brewfest Reveler - Goblin'''),
