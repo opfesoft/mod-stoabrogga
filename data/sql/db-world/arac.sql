@@ -362,7 +362,7 @@ UPDATE `playercreateinfo_spell` SET `classmask` = `classmask` | 2 | 256 | 1024 W
 -- Blood Elf specific spells for Warrior, Shaman, Druid
 UPDATE `playercreateinfo_spell` SET `classmask` = `classmask` | 1 | 64 | 1024 WHERE `Spell` IN (813,822,28877);
 UPDATE `playercreateinfo_spell` SET `racemask` = `racemask` | 512, `classmask` = `classmask` | 1 WHERE `Spell` = 20582; -- No Arcane Torrent for generating Rage, use Quickness as alternative for the Blood Elf Warrior
-UPDATE `playercreateinfo_spell` SET `classmask` = `classmask` | 64 | 1024 WHERE `Spell` = 28730;                        -- Arcane Torrent for generating Mana
+UPDATE `playercreateinfo_spell` SET `classmask` = `classmask` | 1 | 64 | 1024 WHERE `Spell` = 28730;                    -- Arcane Torrent for generating Mana
 
 -- Draenei specific spells for Rogue, Warlock, Druid
 UPDATE `playercreateinfo_spell` SET `classmask` = `classmask` | 8 | 256 | 1024 WHERE `Spell` IN (28878,28875,29932);
