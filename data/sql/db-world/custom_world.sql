@@ -90,3 +90,14 @@ UPDATE `creature_template` SET `rank` = 1, `DamageModifier` = 4, `HealthModifier
 
 -- Fulgorge: More health / damage
 UPDATE `creature_template` SET `DamageModifier` = 4, `HealthModifier` = 8 WHERE `entry` = 18678;
+
+-- Restore hostility of the starting zones
+UPDATE `creature_template` SET `faction` = 17 WHERE `entry` IN (38,103);
+UPDATE `creature_template` SET `faction` = 26, `flags_extra` = `flags_extra` & ~2 WHERE `entry` = 80;
+UPDATE `creature_template` SET `faction` = 107 WHERE `entry` IN (706,946);
+UPDATE `creature_template` SET `faction` = 37 WHERE `entry` = 808;
+UPDATE `creature_template` SET `faction` = 22 WHERE `entry` IN (1505,1688,1986,1994);
+UPDATE `creature_template` SET `faction` = 67 WHERE `entry` IN (1506,1507,1667);
+UPDATE `creature_template` SET `faction` = 111 WHERE `entry` IN (2952,2953,2954);
+UPDATE `creature_template` SET `faction` = 14 WHERE `entry` IN (2966,3101,3102,3229,8554,15367,16517,16537);
+UPDATE `creature_template` SET `faction` = 16 WHERE `entry` IN (3183,15271,15273,15294,15298,16521,16522);
