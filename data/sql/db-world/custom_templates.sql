@@ -96,13 +96,11 @@ VALUES
 -- Spirit Wolf: Force Teito to cast "Riptide" if below 50% health
 (702108,0,2,0,2,0,100,0,0,50,15000,25000,0,86,75367,0,19,102010,40,0,1,0,0,0,0,0,0,0,0,'Spirit Wolf - On Health Below 50% - Cross Cast ''Riptide'''),
 
--- Zarursha: Respawn "Zerwosh"; cast "Shoot"; set active
-(702010,0,0,1,11,0,100,0,0,0,0,0,0,48,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,'Zarursha of the Shattered Sun - On Respawn - Set Active On'),
-(702010,0,1,0,61,0,100,0,0,0,0,0,0,80,70201000,0,0,0,0,0,1,0,0,0,0,0,0,0,0,'Zarursha of the Shattered Sun - Linked - Call Timed Action List'),
-(702010,0,2,0,36,0,100,0,0,0,0,0,0,48,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,'Zarursha of the Shattered Sun - On Corpse Removed - Set Active On'),
-(702010,0,3,0,9,0,100,0,2,30,2000,2000,0,11,40873,64,0,0,0,0,2,0,0,0,0,0,0,0,0,'Zarursha of the Shattered Sun - Within 2-30 Range - Cast ''Shoot'' (Prevent Combat Movement)'),
-(702010,0,4,0,9,0,100,1,2,30,250,250,0,11,53338,0,0,0,0,0,2,0,0,0,0,0,0,0,0,'Zarursha of the Shattered Sun - Within 2-30 Range - Cast ''Hunter''s Mark'' (No Repeat)'),
-(702010,0,5,0,6,0,100,0,0,0,0,0,0,41,0,0,0,0,0,0,11,702110,40,0,0,0,0,0,0,'Zarursha of the Shattered Sun - On Death - Despawn ''Zerwosh'''),
+-- Zarursha: Respawn "Zerwosh"; cast "Shoot"
+(702010,0,0,0,11,0,100,0,0,0,0,0,0,80,70201000,0,0,0,0,0,1,0,0,0,0,0,0,0,0,'Zarursha of the Shattered Sun - On Respawn - Call Timed Action List'),
+(702010,0,1,0,9,0,100,0,2,30,2000,2000,0,11,40873,64,0,0,0,0,2,0,0,0,0,0,0,0,0,'Zarursha of the Shattered Sun - Within 2-30 Range - Cast ''Shoot'' (Prevent Combat Movement)'),
+(702010,0,2,0,9,0,100,1,2,30,250,250,0,11,53338,0,0,0,0,0,2,0,0,0,0,0,0,0,0,'Zarursha of the Shattered Sun - Within 2-30 Range - Cast ''Hunter''s Mark'' (No Repeat)'),
+(702010,0,3,0,6,0,100,0,0,0,0,0,0,41,0,0,0,0,0,0,11,702110,40,0,0,0,0,0,0,'Zarursha of the Shattered Sun - On Death - Despawn ''Zerwosh'''),
 
 (70201000,9,0,0,0,0,100,0,1000,1000,0,0,0,70,0,0,0,0,0,0,11,702110,40,0,0,0,0,0,0,'Zarursha of the Shattered Sun - On Script - Respawn ''Zerwosh'''),
 
@@ -110,11 +108,9 @@ VALUES
 (702110,0,0,0,1,0,100,0,1000,1000,10000,10000,0,41,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,'Zerwosh - OOC - Despawn'),
 (702110,0,1,0,0,0,100,0,250,250,10000,30000,0,11,55754,2,0,0,0,0,2,0,0,0,0,0,0,0,0,'Zerwosh - IC - Cast ''Acid Spit'''),
 
--- Rexxar: Respawn "Misha"; set active
-(702111,0,0,1,11,0,100,0,0,0,0,0,0,48,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,'Rexxar - On Respawn - Set Active On'),
-(702111,0,1,0,61,0,100,0,0,0,0,0,0,80,70211100,0,0,0,0,0,1,0,0,0,0,0,0,0,0,'Rexxar - Linked - Call Timed Action List'),
-(702111,0,2,0,36,0,100,0,0,0,0,0,0,48,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,'Rexxar - On Corpse Removed - Set Active On'),
-(702111,0,3,0,6,0,100,0,0,0,0,0,0,41,0,0,0,0,0,0,11,702112,40,0,0,0,0,0,0,'Rexxar - On Death - Despawn ''Misha'''),
+-- Rexxar: Respawn "Misha"
+(702111,0,0,0,11,0,100,0,0,0,0,0,0,80,70211100,0,0,0,0,0,1,0,0,0,0,0,0,0,0,'Rexxar - On Respawn - Call Timed Action List'),
+(702111,0,1,0,6,0,100,0,0,0,0,0,0,41,0,0,0,0,0,0,11,702112,40,0,0,0,0,0,0,'Rexxar - On Death - Despawn ''Misha'''),
 
 (70211100,9,0,0,0,0,100,0,1000,1000,0,0,0,70,0,0,0,0,0,0,11,702112,40,0,0,0,0,0,0,'Rexxar - On Script - Respawn ''Misha'''),
 
