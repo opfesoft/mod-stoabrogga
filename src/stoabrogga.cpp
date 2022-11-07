@@ -12,11 +12,11 @@
 
 enum StoabroggaNpcs
 {
-    NPC_BARBED_SPIDER             = 702100,
-    NPC_ARCANE_WYRM               = 702102,
-    NPC_MANA_WYRM                 = 702103,
-    NPC_RAZZASHI_RAPTOR           = 702106,
-    NPC_RAVEN_LORD                = 702107
+    NPC_BARBED_SPIDER             = 702200,
+    NPC_ARCANE_WYRM               = 702202,
+    NPC_MANA_WYRM                 = 702203,
+    NPC_RAZZASHI_RAPTOR           = 702206,
+    NPC_RAVEN_LORD                = 702207
 };
 
 enum StoabroggaDisplayIds
