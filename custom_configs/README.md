@@ -1,0 +1,1 @@
+Stoabrogga's configuration files. The configuration files for [mod-morphsummon](https://gitlab.com/opfesoft/mod-morphsummon) and [mod-npc-beastmaster](https://gitlab.com/opfesoft/mod-npc-beastmaster) use customizations introduced with this module.
