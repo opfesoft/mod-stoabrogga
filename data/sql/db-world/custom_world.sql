@@ -101,3 +101,11 @@ UPDATE `creature_template` SET `faction` = 67 WHERE `entry` IN (1506,1507,1667);
 UPDATE `creature_template` SET `faction` = 111 WHERE `entry` IN (2952,2953,2954);
 UPDATE `creature_template` SET `faction` = 14 WHERE `entry` IN (2966,3101,3102,3229,8554,15367,16517,16537);
 UPDATE `creature_template` SET `faction` = 16 WHERE `entry` IN (3183,15271,15273,15294,15298,16521,16522);
+
+-- Tinkerbell: Run away when L70ETC event starts
+UPDATE `creature_template` SET `AIName` = 'SmartAI' WHERE `entry` = 18762;
+DELETE FROM `smart_scripts` WHERE `source_type` = 0 AND `entryorguid` = 18762;
+INSERT INTO `smart_scripts` (`entryorguid`, `source_type`, `id`, `link`, `event_type`, `event_phase_mask`, `event_chance`, `event_flags`, `event_param1`, `event_param2`, `event_param3`, `event_param4`, `event_param5`, `action_type`, `action_param1`, `action_param2`, `action_param3`, `action_param4`, `action_param5`, `action_param6`, `target_type`, `target_param1`, `target_param2`, `target_param3`, `target_param4`, `target_x`, `target_y`, `target_z`, `target_o`, `comment`)
+VALUES
+(18762,0,0,1,68,0,100,0,47,0,0,0,0,239,300000,0,0,0,0,0,1,0,0,0,0,0,0,0,0,'Tinkerbell - On Game Event 47 Started - Stop WP Movement'),
+(18762,0,1,0,61,0,100,0,0,0,0,0,0,69,0,0,0,0,0,0,8,0,0,0,0,-1717.8,5146.03,-35.6479,0,'Tinkerbell - Linked - Move To Position');
