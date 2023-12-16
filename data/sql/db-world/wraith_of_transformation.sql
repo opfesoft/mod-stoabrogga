@@ -1,23 +1,23 @@
 -- Transformation NPC
 DELETE FROM `creature_template` WHERE `entry` = 603251;
-INSERT INTO `creature_template` (`entry`, `difficulty_entry_1`, `difficulty_entry_2`, `difficulty_entry_3`, `KillCredit1`, `KillCredit2`, `modelid1`, `modelid2`, `modelid3`, `modelid4`, `name`, `subname`, `IconName`, `gossip_menu_id`, `minlevel`, `maxlevel`, `exp`, `faction`, `npcflag`, `speed_walk`, `speed_run`, `scale`, `rank`, `dmgschool`, `DamageModifier`, `BaseAttackTime`, `RangeAttackTime`, `unit_class`, `unit_flags`, `unit_flags2`, `dynamicflags`, `family`, `trainer_type`, `trainer_spell`, `trainer_class`, `trainer_race`, `type`, `type_flags`, `lootid`, `pickpocketloot`, `skinloot`, `resistance1`, `resistance2`, `resistance3`, `resistance4`, `resistance5`, `resistance6`, `spell1`, `spell2`, `spell3`, `spell4`, `spell5`, `spell6`, `spell7`, `spell8`, `PetSpellDataId`, `VehicleId`, `mingold`, `maxgold`, `AIName`, `MovementType`, `InhabitType`, `HoverHeight`, `HealthModifier`, `ManaModifier`, `ArmorModifier`, `RacialLeader`, `movementId`, `RegenHealth`, `mechanic_immune_mask`, `flags_extra`, `ScriptName`, `VerifiedBuild`)
+INSERT INTO `creature_template` (`entry`, `difficulty_entry_1`, `difficulty_entry_2`, `difficulty_entry_3`, `KillCredit1`, `KillCredit2`, `modelid1`, `modelid2`, `modelid3`, `modelid4`, `name`, `subname`, `IconName`, `gossip_menu_id`, `minlevel`, `maxlevel`, `exp`, `faction`, `npcflag`, `speed_walk`, `speed_run`, `scale`, `rank`, `dmgschool`, `DamageModifier`, `BaseAttackTime`, `RangeAttackTime`, `unit_class`, `unit_flags`, `unit_flags2`, `dynamicflags`, `family`, `trainer_type`, `trainer_spell`, `trainer_class`, `trainer_race`, `type`, `type_flags`, `lootid`, `pickpocketloot`, `skinloot`, `resistance1`, `resistance2`, `resistance3`, `resistance4`, `resistance5`, `resistance6`, `spell1`, `spell2`, `spell3`, `spell4`, `spell5`, `spell6`, `spell7`, `spell8`, `PetSpellDataId`, `VehicleId`, `mingold`, `maxgold`, `AIName`, `MovementType`, `InhabitType`, `HoverHeight`, `HealthModifier`, `ManaModifier`, `ArmorModifier`, `RacialLeader`, `movementId`, `RegenHealth`, `mechanic_immune_mask`, `flags_extra`, `ScriptName`)
 VALUES
-(603251,0,0,0,0,0,10771,0,0,0,'Wraith of Transformation','',NULL,53251,80,80,0,35,1,1.14286,1.25,1,0,0,1,1410,1551,1,0,2048,0,0,0,0,0,0,10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,117,586,'SmartAI',0,3,1,1,1,1,0,0,1,0,0,'',0);
+(603251,0,0,0,0,0,10771,0,0,0,'Wraith of Transformation','',NULL,53251,80,80,0,35,1,1.14286,1.25,1,0,0,1,1410,1551,1,0,2048,0,0,0,0,0,0,10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,117,586,'SmartAI',0,3,1,1,1,1,0,0,1,0,0,'');
 
 DELETE FROM `gossip_menu_option` WHERE `MenuID` = 53251;
-INSERT INTO `gossip_menu_option` (`MenuID`, `OptionID`, `OptionIcon`, `OptionText`, `OptionBroadcastTextID`, `OptionType`, `OptionNpcFlag`, `ActionMenuID`, `ActionPoiID`, `BoxCoded`, `BoxMoney`, `BoxText`, `BoxBroadcastTextID`, `VerifiedBuild`)
+INSERT INTO `gossip_menu_option` (`MenuID`, `OptionID`, `OptionIcon`, `OptionText`, `OptionBroadcastTextID`, `OptionType`, `OptionNpcFlag`, `ActionMenuID`, `ActionPoiID`, `BoxCoded`, `BoxMoney`, `BoxText`, `BoxBroadcastTextID`)
 VALUES
-(53251,0,4,'Revert Transformation',0,1,1,0,0,0,0,'',0,0),
-(53251,1,4,'Brewfest Dwarf (Random)',0,1,1,0,0,0,0,'',0,0),  -- aura 43909
-(53251,2,4,'Brewfest Goblin (Random)',0,1,1,0,0,0,0,'',0,0), -- aura 43911
-(53251,3,4,'Evergrove Druid (Random)',0,1,1,0,0,0,0,'',0,0), -- aura 39158
-(53251,4,4,'Footman (Male)',0,1,1,0,0,0,0,'',0,0),           -- aura 48498
-(53251,5,4,'Human (Female)',0,1,1,0,0,0,0,'',0,0),           -- aura 62550
-(53251,6,4,'Orc (Male)',0,1,1,0,0,0,0,'',0,0),               -- aura 34317
-(53251,7,4,'Undead (Female)',0,1,1,0,0,0,0,'',0,0),          -- aura 29488
-(53251,8,4,'Worgen (Male)',0,1,1,0,0,0,0,'',0,0),            -- aura 31310
-(53251,9,4,'Druid Bear Form',0,1,1,0,0,0,0,'',0,0),          -- aura 20514
-(53251,10,0,'Play Undead Dance Music',0,1,1,0,0,0,0,'',0,0);
+(53251,0,4,'Revert Transformation',0,1,1,0,0,0,0,'',0),
+(53251,1,4,'Brewfest Dwarf (Random)',0,1,1,0,0,0,0,'',0),  -- aura 43909
+(53251,2,4,'Brewfest Goblin (Random)',0,1,1,0,0,0,0,'',0), -- aura 43911
+(53251,3,4,'Evergrove Druid (Random)',0,1,1,0,0,0,0,'',0), -- aura 39158
+(53251,4,4,'Footman (Male)',0,1,1,0,0,0,0,'',0),           -- aura 48498
+(53251,5,4,'Human (Female)',0,1,1,0,0,0,0,'',0),           -- aura 62550
+(53251,6,4,'Orc (Male)',0,1,1,0,0,0,0,'',0),               -- aura 34317
+(53251,7,4,'Undead (Female)',0,1,1,0,0,0,0,'',0),          -- aura 29488
+(53251,8,4,'Worgen (Male)',0,1,1,0,0,0,0,'',0),            -- aura 31310
+(53251,9,4,'Druid Bear Form',0,1,1,0,0,0,0,'',0),          -- aura 20514
+(53251,10,0,'Play Undead Dance Music',0,1,1,0,0,0,0,'',0);
 
 DELETE FROM `smart_scripts` WHERE `entryorguid` = 603251 AND `source_type` = 0;
 DELETE FROM `smart_scripts` WHERE `entryorguid` BETWEEN 60325100 AND 60325112 AND `source_type` = 9;
