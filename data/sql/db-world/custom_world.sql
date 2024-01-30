@@ -71,6 +71,19 @@ UPDATE `spell_script_names` SET `ScriptName` = 'spell_stoabrogga_blazing_hippogr
 UPDATE `spell_script_names` SET `ScriptName` = 'spell_stoabrogga_celestial_steed' WHERE `ScriptName` = 'spell_celestial_steed';
 UPDATE `spell_script_names` SET `ScriptName` = 'spell_stoabrogga_x53_touring_rocket' WHERE `ScriptName` = 'spell_x53_touring_rocket';
 
+DELETE FROM `disables` WHERE `sourceType` = 9 AND `entry` BETWEEN 50000 AND 50008;
+INSERT INTO `disables` (`sourceType`, `entry`, `flags`, `params_0`, `params_1`, `comment`)
+VALUES
+(9,50000,0,'spell_big_blizzard_bear','','Overridden by spell_stoabrogga_big_blizzard_bear'),
+(9,50001,0,'spell_magic_broom','','Overridden by spell_stoabrogga_magic_broom'),
+(9,50002,0,'spell_headless_horseman_mount','','Overridden by spell_stoabrogga_headless_horseman_mount'),
+(9,50003,0,'spell_winged_steed_of_the_ebon_blade','','Overridden by spell_stoabrogga_winged_steed_of_the_ebon_blade'),
+(9,50004,0,'spell_big_love_rocket','','Overridden by spell_stoabrogga_big_love_rocket'),
+(9,50005,0,'spell_invincible','','Overridden by spell_stoabrogga_invincible'),
+(9,50006,0,'spell_blazing_hippogryph','','Overridden by spell_stoabrogga_blazing_hippogryph'),
+(9,50007,0,'spell_celestial_steed','','Overridden by spell_stoabrogga_celestial_steed'),
+(9,50008,0,'spell_x53_touring_rocket','','Overridden by spell_stoabrogga_x53_touring_rocket');
+
 
 -- Troll Roof Stalker: Use "Uber Stealth" instead of "Stealth" to prevent the annoying sound in the auction house when they get visible
 DELETE FROM `smart_scripts` WHERE `entryorguid` = 23090 AND `source_type` = 0;
