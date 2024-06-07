@@ -103,7 +103,7 @@ VALUES
 (5000040,702010,0,'Zarursha Spawn 4');
 
 DELETE FROM `creature_addon` WHERE `guid` IN (5000030,5000034,5000036,5000038,5000040,5000042,5000043,5000045,5000047);
-INSERT INTO `creature_addon` (`guid`, `path_id`, `mount`, `bytes1`, `bytes2`, `emote`, `isLarge`, `auras`)
+INSERT INTO `creature_addon` (`guid`, `path_id`, `mount`, `bytes1`, `bytes2`, `emote`, `addonFlags`, `auras`)
 VALUES
 (5000030,0,0,0,1,0,0,NULL),        -- Teito: Prepared melee weapon
 (5000034,50000340,0,0,2,0,0,NULL), -- Zarursha Spawn 1: Waypoint path; ready ranged weapon

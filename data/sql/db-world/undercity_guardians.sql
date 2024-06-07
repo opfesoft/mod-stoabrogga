@@ -14,7 +14,7 @@ VALUES
 
 -- Add "Disease Cloud" aura to Undercity Guardian
 DELETE FROM `creature_template_addon` WHERE `entry` = 5624;
-INSERT INTO `creature_template_addon` (`entry`, `path_id`, `mount`, `bytes1`, `bytes2`, `emote`, `isLarge`, `auras`)
+INSERT INTO `creature_template_addon` (`entry`, `path_id`, `mount`, `bytes1`, `bytes2`, `emote`, `addonFlags`, `auras`)
 VALUES
 (5624,0,0,0,0,0,0,'12187');
 
@@ -23,7 +23,7 @@ DELETE FROM `creature_addon` WHERE `guid` IN (
 17669, 28481, 28485, 28486, 28487, 28488, 28489, 28490, 33823, 33831, 34102, 34103, 34104, 34105, 34106, 38296,
 38297, 38298, 38299, 38301, 38302, 38305, 39019, 39020, 39022, 39023, 39024, 39025, 39026, 41884, 41887, 41888,
 41889, 41890, 41891, 41892, 41956, 41960, 41961, 41964, 79264, 79265, 79266, 79267);
-INSERT INTO `creature_addon` (`guid`, `path_id`, `mount`, `bytes1`, `bytes2`, `emote`, `isLarge`, `auras`)
+INSERT INTO `creature_addon` (`guid`, `path_id`, `mount`, `bytes1`, `bytes2`, `emote`, `addonFlags`, `auras`)
 VALUES
 (34103,341030,0,0,0,0,0,'12187'),
 (34104,341040,0,0,0,0,0,'12187'),
